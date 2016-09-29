@@ -1,0 +1,86 @@
+#app {
+	margin: none;
+	padding: none;
+	height: 100vh;
+	width: 100%;
+	overflow: scroll;
+	#Layout {
+		height: 100%;
+		width: 100%;
+		margin: none;
+		padding: none;
+		color: black;
+		background-color: white;
+		background-position: fixed;
+		#stateHolder {
+			margin: none;
+			padding: none;
+			width: 100%;
+			#controls {
+				padding-left: 10%;
+				color: white;
+				background-color: #262626;
+				#playBtn {
+					border: solid red 5px;
+					color: black;
+					background-color: green;
+				}
+			}
+			#board {
+				margin: none;
+				padding: none;
+				width: 90vw;
+				height: 90vw;
+				margin-top: 2.5vh;
+				box-shadow: inset .5px .5px .5px .5px 0px black;
+				.boardRow {
+					margin: none;
+					padding: none;
+					width: 100%;
+					height: 1%;
+					.boardBlock {
+						margin: none;
+						padding: none;
+						height: 100%;
+						width: 1%;
+						font-size: 5px;
+						float: left;
+						background-color: transparent;
+					}
+					.gas {
+						opacity: .5;
+						background-color: green;
+					}
+					.dark {
+						color: black;
+						background-color: black;
+					}
+					.wall {
+						color: transparent;
+						font-size: 3px;
+						background-color: #262626;
+						box-shadow: inset .25px .25px .25px 0px black;
+					}
+					.icons {
+						padding: none;
+						margin: none;
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
+			.control-icons {
+				height: 75%;
+				width: 75%;
+				margin: 5%;
+			}
+			#healthMeter {
+					border-radius: 100%;
+			}
+			.reference {
+				font-size: 50%;
+				color: black;
+			}
+		}
+	}
+}
