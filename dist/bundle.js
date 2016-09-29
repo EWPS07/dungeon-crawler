@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "12ec5dc0c45703cd5883"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3dfbd83e8b76bf68336e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -14315,6 +14315,7 @@
 						}
 					}
 				}
+				this.illuminate();
 			}
 
 			// right arrow movement ----------------------
@@ -14339,6 +14340,7 @@
 						}
 					}
 				}
+				this.illuminate();
 			}
 
 			// up arrow movement --------------------------
@@ -14363,6 +14365,7 @@
 						}
 					}
 				}
+				this.illuminate();
 			}
 
 			// down arrow movement ------------------------
@@ -14387,6 +14390,7 @@
 						}
 					}
 				}
+				this.illuminate();
 			}
 
 			// PLAYER INTERACTIONS -----------------------------------------------------------
@@ -14636,6 +14640,13 @@
 		}, {
 			key: 'illuminate',
 			value: function illuminate(e) {
+				for (var i = 0; i < this.state.level.length; i++) {
+					for (var I = 0; I < this.state.level[i].length; I++) {
+						this.state.level[i][I].dark = true;
+					}
+				}
+				this.setState({ level: this.state.level });
+
 				this.state.level[this.state.activeRow][this.state.activeCol].dark = false;
 				if (this.state.activeRow > 0) {
 					this.state.level[this.state.activeRow - 1][this.state.activeCol].dark = false;
@@ -14697,8 +14708,7 @@
 								rightArrow: this.rightArrow.bind(this),
 								upArrow: this.upArrow.bind(this),
 								downArrow: this.downArrow.bind(this),
-								interact: this.interact.bind(this),
-								illuminate: this.illuminate.bind(this)
+								interact: this.interact.bind(this)
 							})
 						)
 					)
@@ -14800,7 +14810,7 @@
 				var activeCol = this.props.activeCol;
 				return _react2.default.createElement(
 					'div',
-					{ onChange: this.props.illuminate, id: 'board' },
+					{ id: 'board' },
 					_react2.default.createElement(_reactKeyHandler2.default, { keyEventName: _reactKeyHandler.KEYDOWN, keyValue: 'ArrowUp', onKeyHandle: this.props.upArrow }),
 					_react2.default.createElement(_reactKeyHandler2.default, { keyEventName: _reactKeyHandler.KEYDOWN, keyValue: 'ArrowDown', onKeyHandle: this.props.downArrow }),
 					_react2.default.createElement(_reactKeyHandler2.default, { keyEventName: _reactKeyHandler.KEYDOWN, keyValue: 'ArrowRight', onKeyHandle: this.props.rightArrow }),
