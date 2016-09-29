@@ -471,7 +471,7 @@ class GameStateController extends React.Component {
 			stuff.splice(weaponIndex, 1)
 		}
 		this.setState({level: levelOne})
-		this.setState({activeRow: 32, activeCol: 32})
+		this.setState({activeRow: 0, activeCol: 0})
 	}
 
 
@@ -508,6 +508,7 @@ class GameStateController extends React.Component {
 				}
 			}
 		}
+		this.illuminate()
 	}
 
 	// right arrow movement ----------------------
@@ -530,6 +531,7 @@ class GameStateController extends React.Component {
 				}
 			}
 		}
+		this.illuminate()
 	}
 
 	// up arrow movement --------------------------
@@ -552,6 +554,7 @@ class GameStateController extends React.Component {
 				}
 			}
 		}
+		this.illuminate()
 	}
 
 	// down arrow movement ------------------------
@@ -574,6 +577,7 @@ class GameStateController extends React.Component {
 				}
 			}
 		}
+		this.illuminate()
 	}
 
 	// PLAYER INTERACTIONS -----------------------------------------------------------
@@ -835,6 +839,31 @@ class GameStateController extends React.Component {
 		else if(this.state.actionObject === 'lockedDoor') {
 			alert('You need a key to open this door!')
 		}
+	}
+
+	// illuminated area ----------------------------------
+	illuminate(e) {
+		for(var i=0;i<this.state.level.length;i++) {
+			for(var I=0;I<this.state.level[i].length;I++) {
+				this.state.level[i][I].dark = true
+			}
+		}
+		this.setState({level: this.state.level})
+		
+		this.state.level[this.state.activeRow][this.state.activeCol].dark = false
+		if(this.state.activeRow>0) {
+			this.state.level[this.state.activeRow-1][this.state.activeCol].dark = false
+		}
+		if(this.state.activeRow<99) {
+			this.state.level[this.state.activeRow+1][this.state.activeCol].dark = false
+		}
+		if(this.state.activeCol>0) {
+			this.state.level[this.state.activeRow][this.state.activeCol-1].dark = false
+		}
+		if(this.state.activeCol<99) {
+			this.state.level[this.state.activeRow][this.state.activeCol+1].dark = false
+		}
+		this.setState({level: this.state.level})
 	}
 
 	// data notifications --------------------------------

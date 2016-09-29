@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9a035d7047ecc4b8eb2c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "12ec5dc0c45703cd5883"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -6092,7 +6092,7 @@
 
 
 	// module
-	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100vh;\n  width: 100%;\n  overflow: scroll; }\n  #app #Layout {\n    height: 100%;\n    width: 100%;\n    margin: none;\n    padding: none;\n    color: black;\n    background-color: white;\n    background-position: fixed; }\n    #app #Layout #stateHolder {\n      margin: none;\n      padding: none;\n      width: 100%; }\n      #app #Layout #stateHolder #controls {\n        padding-left: 10%;\n        color: white;\n        background-color: #262626; }\n        #app #Layout #stateHolder #controls #playBtn {\n          border: solid red 5px;\n          color: black;\n          background-color: green; }\n      #app #Layout #stateHolder #board {\n        margin: none;\n        padding: none;\n        width: 90vw;\n        height: 90vw;\n        margin-top: 2.5vh;\n        box-shadow: inset .5px .5px .5px .5px 0px black; }\n        #app #Layout #stateHolder #board .boardRow {\n          margin: none;\n          padding: none;\n          width: 100%;\n          height: 1%; }\n          #app #Layout #stateHolder #board .boardRow .boardBlock {\n            margin: none;\n            padding: none;\n            height: 100%;\n            width: 1%;\n            font-size: 5px;\n            float: left;\n            background-color: transparent; }\n          #app #Layout #stateHolder #board .boardRow .gas {\n            opacity: .5;\n            background-color: green; }\n          #app #Layout #stateHolder #board .boardRow .dark {\n            color: black;\n            background-color: black; }\n          #app #Layout #stateHolder #board .boardRow .wall {\n            color: transparent;\n            font-size: 3px;\n            background-color: #262626;\n            box-shadow: inset .25px .25px .25px 0px black; }\n          #app #Layout #stateHolder #board .boardRow .icons {\n            padding: none;\n            margin: none;\n            height: 100%;\n            width: 100%; }\n      #app #Layout #stateHolder .control-icons {\n        height: 75%;\n        width: 75%;\n        margin: 5%; }\n      #app #Layout #stateHolder #healthMeter {\n        border-radius: 100%; }\n      #app #Layout #stateHolder .reference {\n        font-size: 50%;\n        color: black; }\n", ""]);
+	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100vh;\n  width: 100%;\n  overflow: scroll; }\n  #app #Layout {\n    height: 100%;\n    width: 100%;\n    margin: none;\n    padding: none;\n    color: black;\n    background-color: white;\n    background-position: fixed; }\n    #app #Layout #stateHolder {\n      margin: none;\n      padding: none;\n      width: 100%; }\n      #app #Layout #stateHolder #controls {\n        padding-left: 10%;\n        color: white;\n        background-color: #262626; }\n        #app #Layout #stateHolder #controls #playBtn {\n          border: solid red 5px;\n          color: black;\n          background-color: green; }\n      #app #Layout #stateHolder #board {\n        margin: none;\n        padding: none;\n        width: 90vw;\n        height: 90vw;\n        margin-top: 2.5vh;\n        box-shadow: inset .5px .5px .5px .5px 0px black; }\n        #app #Layout #stateHolder #board .boardRow {\n          margin: none;\n          padding: none;\n          width: 100%;\n          height: 1%; }\n          #app #Layout #stateHolder #board .boardRow .boardBlock {\n            margin: none;\n            padding: none;\n            height: 100%;\n            width: 1%;\n            font-size: 5px;\n            float: left;\n            background-color: transparent; }\n          #app #Layout #stateHolder #board .boardRow .gas {\n            background-color: green; }\n          #app #Layout #stateHolder #board .boardRow .dark {\n            color: #262626;\n            background-color: #262626; }\n          #app #Layout #stateHolder #board .boardRow .wall {\n            font-size: 3px;\n            background-color: #262626;\n            box-shadow: inset .25px .25px .25px 0px black; }\n          #app #Layout #stateHolder #board .boardRow .icons {\n            padding: none;\n            margin: none;\n            height: 100%;\n            width: 100%; }\n      #app #Layout #stateHolder .control-icons {\n        height: 75%;\n        width: 75%;\n        margin: 5%; }\n      #app #Layout #stateHolder #healthMeter {\n        border-radius: 100%; }\n      #app #Layout #stateHolder .reference {\n        font-size: 50%;\n        color: black; }\n", ""]);
 
 	// exports
 
@@ -14279,7 +14279,7 @@
 					stuff.splice(_weaponIndex3, 1);
 				}
 				this.setState({ level: levelOne });
-				this.setState({ activeRow: 32, activeCol: 32 });
+				this.setState({ activeRow: 0, activeCol: 0 });
 			}
 
 			// PLAYER MOVEMENT WITH ARROWS --------------------------------------------------
@@ -14631,6 +14631,27 @@
 				}
 			}
 
+			// illuminated area ----------------------------------
+
+		}, {
+			key: 'illuminate',
+			value: function illuminate(e) {
+				this.state.level[this.state.activeRow][this.state.activeCol].dark = false;
+				if (this.state.activeRow > 0) {
+					this.state.level[this.state.activeRow - 1][this.state.activeCol].dark = false;
+				}
+				if (this.state.activeRow < 99) {
+					this.state.level[this.state.activeRow + 1][this.state.activeCol].dark = false;
+				}
+				if (this.state.activeCol > 0) {
+					this.state.level[this.state.activeRow][this.state.activeCol - 1].dark = false;
+				}
+				if (this.state.activeCol < 99) {
+					this.state.level[this.state.activeRow][this.state.activeCol + 1].dark = false;
+				}
+				this.setState({ level: this.state.level });
+			}
+
 			// data notifications --------------------------------
 
 		}, {
@@ -14676,7 +14697,8 @@
 								rightArrow: this.rightArrow.bind(this),
 								upArrow: this.upArrow.bind(this),
 								downArrow: this.downArrow.bind(this),
-								interact: this.interact.bind(this)
+								interact: this.interact.bind(this),
+								illuminate: this.illuminate.bind(this)
 							})
 						)
 					)
@@ -14778,7 +14800,7 @@
 				var activeCol = this.props.activeCol;
 				return _react2.default.createElement(
 					'div',
-					{ id: 'board' },
+					{ onChange: this.props.illuminate, id: 'board' },
 					_react2.default.createElement(_reactKeyHandler2.default, { keyEventName: _reactKeyHandler.KEYDOWN, keyValue: 'ArrowUp', onKeyHandle: this.props.upArrow }),
 					_react2.default.createElement(_reactKeyHandler2.default, { keyEventName: _reactKeyHandler.KEYDOWN, keyValue: 'ArrowDown', onKeyHandle: this.props.downArrow }),
 					_react2.default.createElement(_reactKeyHandler2.default, { keyEventName: _reactKeyHandler.KEYDOWN, keyValue: 'ArrowRight', onKeyHandle: this.props.rightArrow }),
