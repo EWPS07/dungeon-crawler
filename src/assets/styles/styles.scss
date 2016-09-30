@@ -51,8 +51,10 @@
 						background-color: green;
 					}
 					.dark {
-						color: #262626;
-						background-color: #262626;
+						background-color: black;
+					}
+					.inDark {
+						opacity: .15;
 					}
 					.wall {
 						font-size: 3px;
@@ -71,6 +73,10 @@
 				height: 75%;
 				width: 75%;
 				margin: 5%;
+			}
+			.items-icons {
+				height: 50%;
+				width: 50%;
 			}
 			#healthMeter {
 					border-radius: 100%;

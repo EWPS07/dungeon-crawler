@@ -19,6 +19,7 @@ let matchesIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/m
 let lighterIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/lighter.png')
 let flashlightIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/flashlight.png')
 let lockedDoorIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/lockedDoor.png')
+let unlockedDoorIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/unlockedDoor.png')
 let bulletsIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/glyphicons-282-bullets@3x.png')
 let elixirIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/elixir.png')
 let bossKeyIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/bossKey.png')
@@ -111,12 +112,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={crazyInmateIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={crazyInmateIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={crazyInmateIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={crazyInmateIcon}/></div>
 													)
 												}
 											}
@@ -139,12 +140,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={guardDogsIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={guardDogsIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={guardDogsIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={guardDogsIcon}/></div>
 													)
 												}	
 											}
@@ -167,12 +168,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={guardIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={guardIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={guardIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={guardIcon}/></div>
 													)
 												}	
 											}
@@ -195,12 +196,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={executionerIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={executionerIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={executionerIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={executionerIcon}/></div>
 													)
 												}
 											}
@@ -223,12 +224,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons' src={bossIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark' src={bossIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons' src={bossIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark' src={bossIcon}/></div>
 													)
 												}
 											}
@@ -252,12 +253,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={keyIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={keyIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={keyIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={keyIcon}/></div>
 													)
 												}
 											}
@@ -280,12 +281,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={matchesIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={matchesIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={matchesIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={matchesIcon}/></div>
 													)
 												}
 											}
@@ -309,12 +310,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={lighterIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={lighterIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={lighterIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={lighterIcon}/></div>
 													)
 												}
 											}
@@ -338,12 +339,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={flashlightIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={flashlightIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={flashlightIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={flashlightIcon}/></div>
 													)
 												}
 											}
@@ -367,17 +368,43 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark' key={index}><img className='icons' src={lockedDoorIcon}/></div>
+														<div className='boardBlock gas dark' key={index}><img className='icons inDark' src={lockedDoorIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark' key={index}><img className='icons' src={lockedDoorIcon}/></div>
+														<div className='boardBlock dark' key={index}><img className='icons inDark' src={lockedDoorIcon}/></div>
 													)
 												}
 											}
 										}
 
+										if(col.content === 'unlockedDoor') {
+											if(col.dark === false) {
+												if(col.gas === true) {
+													return(
+														<div className='boardBlock gas' key={index}><img className='icons' src={unlockedDoorIcon}/></div>
+													)
+												}
+												else {
+													return(
+														<div className='boardBlock' key={index}><img className='icons' src={unlockedDoorIcon}/></div>
+													)
+												}
+											}
+											else {
+												if(col.gas === true) {
+													return(
+														<div className='boardBlock gas dark' key={index}><img className='icons inDark' src={unlockedDoorIcon}/></div>
+													)
+												}
+												else {
+													return(
+														<div className='boardBlock dark' key={index}><img className='icons inDark' src={unlockedDoorIcon}/></div>
+													)
+												}
+											}
+										}
 
 										if(col.content === 'specialAmmo') {
 											if(col.dark === false) {
@@ -395,12 +422,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark' key={index}><img className='icons' src={bulletsIcon}/></div>
+														<div className='boardBlock gas dark' key={index}><img className='icons inDark' src={bulletsIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark' key={index}><img className='icons' src={bulletsIcon}/></div>
+														<div className='boardBlock dark' key={index}><img className='icons inDark' src={bulletsIcon}/></div>
 													)
 												}
 											}
@@ -424,12 +451,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(	
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={elixirIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={elixirIcon}/></div>
 													)
 												}
 												else {
 													return(	
-														<div className='boardBlock dark'key={index}><img className='icons'src={elixirIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={elixirIcon}/></div>
 													)
 												}
 											}
@@ -453,12 +480,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={bossKeyIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={bossKeyIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={bossKeyIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={bossKeyIcon}/></div>
 													)
 												}
 											}
@@ -483,12 +510,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(	
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={bodyArmorIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={bodyArmorIcon}/></div>
 													)
 												}
 												else {
 													return(	
-														<div className='boardBlock dark'key={index}><img className='icons'src={bodyArmorIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={bodyArmorIcon}/></div>
 													)
 												}
 											}
@@ -512,12 +539,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(	
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={shieldIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={shieldIcon}/></div>
 													)
 												}
 												else {
 													return(	
-														<div className='boardBlock dark'key={index}><img className='icons'src={shieldIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={shieldIcon}/></div>
 													)
 												}
 											}
@@ -541,12 +568,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(	
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={gasMaskIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={gasMaskIcon}/></div>
 													)
 												}
 												else {
 													return(	
-														<div className='boardBlock dark'key={index}><img className='icons'src={gasMaskIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={gasMaskIcon}/></div>
 													)
 												}
 											}
@@ -571,12 +598,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={firstAidIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={firstAidIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={firstAidIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={firstAidIcon}/></div>
 													)
 												}
 											}
@@ -600,12 +627,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={healingStationIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={healingStationIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={healingStationIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={healingStationIcon}/></div>
 													)
 												}
 											}
@@ -629,12 +656,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={syringeIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={syringeIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={syringeIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={syringeIcon}/></div>
 													)
 												}
 											}
@@ -659,12 +686,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons' src={knifeIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark' src={knifeIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons' src={knifeIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark' src={knifeIcon}/></div>
 													)
 												}
 											}
@@ -688,12 +715,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={pistolIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={pistolIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={pistolIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={pistolIcon}/></div>
 													)
 												}
 											}
@@ -717,12 +744,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={axIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={axIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={axIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={axIcon}/></div>
 													)
 												}
 											}
@@ -746,12 +773,12 @@ class Gameboard extends React.Component {
 											else {
 												if(col.gas === true) {
 													return(
-														<div className='boardBlock gas dark'key={index}><img className='icons'src={rifleIcon}/></div>
+														<div className='boardBlock gas dark'key={index}><img className='icons inDark'src={rifleIcon}/></div>
 													)
 												}
 												else {
 													return(
-														<div className='boardBlock dark'key={index}><img className='icons'src={rifleIcon}/></div>
+														<div className='boardBlock dark'key={index}><img className='icons inDark'src={rifleIcon}/></div>
 													)
 												}
 											}
