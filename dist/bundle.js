@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c2a2ae65e369c7480139"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ba686b55b4c63dbcbc08"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -6092,7 +6092,7 @@
 
 
 	// module
-	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100vh;\n  width: 100%;\n  overflow: scroll; }\n  #app #Layout {\n    height: 100%;\n    width: 100%;\n    margin: none;\n    padding: none;\n    color: black;\n    background-color: white;\n    background-position: fixed; }\n    #app #Layout #stateHolder {\n      margin: none;\n      padding: none;\n      width: 100%; }\n      #app #Layout #stateHolder #controls {\n        padding-left: 10%;\n        color: white;\n        background-color: #262626; }\n        #app #Layout #stateHolder #controls #playBtn {\n          border: solid red 5px;\n          color: black;\n          background-color: green; }\n      #app #Layout #stateHolder #board {\n        margin: none;\n        padding: none;\n        width: 90vw;\n        height: 90vw;\n        margin-top: 2.5vh;\n        box-shadow: inset .5px .5px .5px .5px 0px black; }\n        #app #Layout #stateHolder #board .boardRow {\n          margin: none;\n          padding: none;\n          width: 100%;\n          height: 1%; }\n          #app #Layout #stateHolder #board .boardRow .boardBlock {\n            margin: none;\n            padding: none;\n            height: 100%;\n            width: 1%;\n            font-size: 5px;\n            float: left;\n            background-color: transparent; }\n          #app #Layout #stateHolder #board .boardRow .gas {\n            background-color: green; }\n          #app #Layout #stateHolder #board .boardRow .dark {\n            background-color: black; }\n          #app #Layout #stateHolder #board .boardRow .inDark {\n            opacity: .15; }\n          #app #Layout #stateHolder #board .boardRow .wall {\n            font-size: 3px;\n            background-color: #262626;\n            box-shadow: inset .25px .25px .25px 0px black; }\n          #app #Layout #stateHolder #board .boardRow .icons {\n            padding: none;\n            margin: none;\n            height: 100%;\n            width: 100%; }\n      #app #Layout #stateHolder .control-icons {\n        height: 75%;\n        width: 75%;\n        margin: 5%; }\n      #app #Layout #stateHolder .items-icons {\n        height: 50%;\n        width: 50%; }\n      #app #Layout #stateHolder #healthMeter {\n        border-radius: 100%; }\n      #app #Layout #stateHolder .reference {\n        font-size: 50%;\n        color: black; }\n", ""]);
+	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100vh;\n  width: 100%;\n  overflow: scroll; }\n  #app #Layout {\n    height: 100%;\n    width: 100%;\n    margin: none;\n    padding: none;\n    color: black;\n    background-color: white;\n    background-position: fixed; }\n    #app #Layout #stateHolder {\n      margin: none;\n      padding: none;\n      width: 100%; }\n      #app #Layout #stateHolder #controls {\n        margin: none;\n        position: fixed;\n        top: 0;\n        bottom: 0;\n        left: 0;\n        padding-left: 2.5%;\n        color: white;\n        background-color: #262626; }\n        #app #Layout #stateHolder #controls #playBtn {\n          border: solid red 5px;\n          color: black;\n          background-color: green; }\n      #app #Layout #stateHolder #board {\n        margin: none;\n        padding: none;\n        width: 90vw;\n        height: 90vw;\n        margin-top: 2.5vh;\n        box-shadow: inset .5px .5px .5px .5px 0px black; }\n        #app #Layout #stateHolder #board .boardRow {\n          margin: none;\n          padding: none;\n          width: 100%;\n          height: 1%; }\n          #app #Layout #stateHolder #board .boardRow .boardBlock {\n            margin: none;\n            padding: none;\n            height: 100%;\n            width: 1%;\n            font-size: 5px;\n            float: left;\n            background-color: transparent; }\n          #app #Layout #stateHolder #board .boardRow .gas {\n            background-color: green; }\n          #app #Layout #stateHolder #board .boardRow .dark {\n            background-color: white; }\n          #app #Layout #stateHolder #board .boardRow .inDark {\n            opacity: .15; }\n          #app #Layout #stateHolder #board .boardRow .wall {\n            font-size: 3px;\n            background-color: #262626;\n            box-shadow: inset .25px .25px .25px 0px black; }\n          #app #Layout #stateHolder #board .boardRow .icons {\n            padding: none;\n            margin: none;\n            height: 100%;\n            width: 100%; }\n      #app #Layout #stateHolder .control-icons {\n        height: 75%;\n        width: 75%;\n        margin: 5%; }\n      #app #Layout #stateHolder .items-icons {\n        height: 50%;\n        width: 50%; }\n      #app #Layout #stateHolder #healthMeter {\n        border-radius: 100%; }\n", ""]);
 
 	// exports
 
@@ -13767,7 +13767,7 @@
 								{ xs: 6 },
 								_react2.default.createElement(
 									'span',
-									null,
+									{ onChange: this.props.healthNotification },
 									this.props.health,
 									'%'
 								)
@@ -13869,7 +13869,7 @@
 								{ xs: 4 },
 								_react2.default.createElement(
 									_Button2.default,
-									null,
+									{ onClick: this.props.useFirstAid },
 									'Use'
 								)
 							)
@@ -13915,7 +13915,7 @@
 								{ xs: 4 },
 								_react2.default.createElement(
 									_Button2.default,
-									null,
+									{ onClick: this.props.useKey },
 									'Use'
 								)
 							)
@@ -13935,7 +13935,7 @@
 							_react2.default.createElement(
 								_Col2.default,
 								{ xs: 12 },
-								_react2.default.createElement('img', { className: 'control-icons', src: this.props.weaponIcon })
+								_react2.default.createElement('img', { className: 'items-icons', src: this.props.weaponIcon })
 							)
 						),
 						_react2.default.createElement(
@@ -13944,7 +13944,7 @@
 							_react2.default.createElement(
 								_Col2.default,
 								{ className: 'text-center', xs: 6 },
-								_react2.default.createElement('img', { className: 'control-icons', src: bodyArmorIcon })
+								_react2.default.createElement('img', { className: 'items-icons', src: bodyArmorIcon })
 							),
 							_react2.default.createElement(
 								_Col2.default,
@@ -13958,7 +13958,7 @@
 							_react2.default.createElement(
 								_Col2.default,
 								{ className: 'text-center', xs: 6 },
-								_react2.default.createElement('img', { className: 'control-icons', src: shieldIcon })
+								_react2.default.createElement('img', { className: 'items-icons', src: shieldIcon })
 							),
 							_react2.default.createElement(
 								_Col2.default,
@@ -13972,7 +13972,7 @@
 							_react2.default.createElement(
 								_Col2.default,
 								{ className: 'text-center', xs: 6 },
-								_react2.default.createElement('img', { className: 'control-icons', src: gasMaskIcon })
+								_react2.default.createElement('img', { className: 'items-icons', src: gasMaskIcon })
 							),
 							_react2.default.createElement(
 								_Col2.default,
@@ -14077,7 +14077,7 @@
 					flashlight: 0,
 					firstAid: 0,
 					syringe: 0,
-					keys: 0,
+					keys: 1,
 					bossKey: 0,
 					bodyArmor: 'unequiped',
 					bodyArmorIcon: undefined,
@@ -14087,7 +14087,7 @@
 					gasMaskIcon: undefined,
 					weapon: 'fists',
 					weaponIcon: __webpack_require__(232),
-					special: [],
+					specialAmmo: 0,
 					enemiesKilled: 0
 				},
 				actionObject: undefined
@@ -14764,21 +14764,37 @@
 		}, {
 			key: 'useMatch',
 			value: function useMatch(e) {
-
-				this.setState({ playerStats: this.state.playerStats });
+				console.log('using matches');
 			}
 		}, {
 			key: 'useLighter',
-			value: function useLighter(e) {}
+			value: function useLighter(e) {
+				console.log('using lighter');
+			}
 		}, {
 			key: 'useFlashlight',
-			value: function useFlashlight(e) {}
+			value: function useFlashlight(e) {
+				console.log('using flashLight');
+			}
 		}, {
 			key: 'useFirstAid',
-			value: function useFirstAid(e) {}
+			value: function useFirstAid(e) {
+				if (this.state.playerStats.firstAid > 0) {
+					this.state.playerStats.health += 15;
+					this.state.playerStats.firstAid -= 1;
+					if (this.state.playerStats.health > 100) {
+						this.state.playerStats.health = 100;
+					}
+					this.setState({
+						playerStats: this.state.playerStats
+					});
+				}
+			}
 		}, {
 			key: 'useSyringe',
-			value: function useSyringe(e) {}
+			value: function useSyringe(e) {
+				console.log('using syringe');
+			}
 		}, {
 			key: 'useKey',
 			value: function useKey(e) {
@@ -14793,7 +14809,7 @@
 						if (lockOrUnlock === 1) {
 							alert("Success!");
 							this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
-							this.setState({ level: this.state.level });
+							this.setState({ level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content });
 						} else {
 							alert("Sorry, you didn't get the door open");
 							this.setState({ level: this.state.level });
@@ -15064,7 +15080,7 @@
 						null,
 						_react2.default.createElement(
 							_Col2.default,
-							{ xs: 3 },
+							{ xs: 2 },
 							_react2.default.createElement(_Controls2.default, { play: this.levelOne.bind(this),
 								health: this.state.playerStats.health,
 								enemiesKilled: this.state.playerStats.enemiesKilled,
@@ -15079,12 +15095,18 @@
 								gasMask: this.state.playerStats.gasMask,
 								weapon: this.state.playerStats.weapon,
 								weaponIcon: this.state.playerStats.weaponIcon,
-								healthNotification: this.healthNotification.bind(this)
+								healthNotification: this.healthNotification.bind(this),
+								useFirstAid: this.useFirstAid.bind(this),
+								useSyringe: this.useSyringe.bind(this),
+								useKey: this.useKey.bind(this),
+								useMatch: this.useMatch.bind(this),
+								useLighter: this.useLighter.bind(this),
+								useFlashlight: this.useFlashlight.bind(this)
 							})
 						),
 						_react2.default.createElement(
 							_Col2.default,
-							{ xs: 9 },
+							{ xs: 10 },
 							_react2.default.createElement(_Gameboard2.default, {
 								level: this.state.level,
 								activeRow: this.state.activeRow,

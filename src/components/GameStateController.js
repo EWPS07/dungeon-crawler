@@ -24,7 +24,7 @@ class GameStateController extends React.Component {
 				flashlight: 0,
 				firstAid: 0,
 				syringe: 0,
-				keys: 0,
+				keys: 1,
 				bossKey: 0,
 				bodyArmor: 'unequiped',
 				bodyArmorIcon: undefined,
@@ -34,7 +34,7 @@ class GameStateController extends React.Component {
 				gasMaskIcon: undefined,
 				weapon: 'fists',
 				weaponIcon: require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/fists.png'),
-				special: [],
+				specialAmmo: 0,
 				enemiesKilled: 0
 			},
 			actionObject: undefined
@@ -771,19 +771,29 @@ class GameStateController extends React.Component {
 
 	// use items --------------------------------------
 	useMatch(e) {
-		
-		this.setState({playerStats: this.state.playerStats})
+		console.log('using matches')
 	}
 	useLighter(e) {
-
+		console.log('using lighter')
 	}
 	useFlashlight(e) {
-
+		console.log('using flashLight')
 	}
 	useFirstAid(e) {
-
+		if(this.state.playerStats.firstAid>0) {
+			this.state.playerStats.health+=15
+			this.state.playerStats.firstAid-=1
+			if(this.state.playerStats.health>100) {
+				this.state.playerStats.health = 100
+			}
+			this.setState({
+				playerStats: this.state.playerStats
+			})
+		}
 	}
-	useSyringe(e) {}
+	useSyringe(e) {
+		console.log('using syringe')
+	}
 	useKey(e) {
 		if(this.state.actionObject !== 'lockedDoor') {
 			alert('You use this key to unlock a locked door!')
@@ -798,7 +808,7 @@ class GameStateController extends React.Component {
 				if(lockOrUnlock === 1) {
 					alert("Success!")
 					this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-					this.setState({level: this.state.level})
+					this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
 				}
 				else {
 					alert("Sorry, you didn't get the door open")
@@ -1083,7 +1093,7 @@ class GameStateController extends React.Component {
 		return(
 			<div id='stateHolder'>
 				<Row>
-					<Col xs={3}>
+					<Col xs={2}>
 						<Controls play={this.levelOne.bind(this)}
 							health={this.state.playerStats.health}
 							enemiesKilled={this.state.playerStats.enemiesKilled}
@@ -1099,9 +1109,15 @@ class GameStateController extends React.Component {
 							weapon={this.state.playerStats.weapon}
 							weaponIcon={this.state.playerStats.weaponIcon}
 							healthNotification={this.healthNotification.bind(this)}
+							useFirstAid={this.useFirstAid.bind(this)}
+							useSyringe={this.useSyringe.bind(this)}
+							useKey={this.useKey.bind(this)}
+							useMatch={this.useMatch.bind(this)}
+							useLighter={this.useLighter.bind(this)}
+							useFlashlight={this.useFlashlight.bind(this)}
 							/>
 					</Col>
-					<Col xs={9}>
+					<Col xs={10}>
 						<Gameboard
 							level={this.state.level}
 							activeRow={this.state.activeRow}

@@ -30,7 +30,7 @@ class Controls extends React.Component {
 						<Col className='text-center'xs={6}>
 							<img className='control-icons' id='healthMeter'src={healthMeterIcon}/>
 						</Col>
-						<Col xs={6}><span>{this.props.health}%</span></Col>
+						<Col xs={6}><span onChange={this.props.healthNotification}>{this.props.health}%</span></Col>
 					</Row>
 					<Row id='items'>
 						<Col xs={12}>Items</Col>
@@ -53,7 +53,7 @@ class Controls extends React.Component {
 					<Row>
 						<Col xs={4}><img className='items-icons'src={firstAidIcon}/></Col>
 						<Col xs={4}>{this.props.firstAid}</Col>
-						<Col xs={4}><Button>Use</Button></Col>
+						<Col xs={4}><Button onClick={this.props.useFirstAid}>Use</Button></Col>
 					</Row>
 					<Row>
 						<Col xs={4}><img className='items-icons'src={syringeIcon}/></Col>
@@ -63,31 +63,31 @@ class Controls extends React.Component {
 					<Row>
 						<Col xs={4}><img className='items-icons'src={keyIcon}/></Col>
 						<Col xs={4}>{this.props.keys}</Col>
-						<Col xs={4}><Button>Use</Button></Col>
+						<Col xs={4}><Button onClick={this.props.useKey}>Use</Button></Col>
 					</Row>
 					<Row id='weapon'>
 						<Col xs={12}>Weapon</Col>
 					</Row>
 					<Row>
 						<Col xs={12}>
-							<img className='control-icons'src={this.props.weaponIcon}/>
+							<img className='items-icons'src={this.props.weaponIcon}/>
 						</Col>
 					</Row>
 					<Row id='bodyArmor'>
 						<Col className='text-center' xs={6}>
-							<img className='control-icons' src={bodyArmorIcon}/>
+							<img className='items-icons' src={bodyArmorIcon}/>
 						</Col>
 						<Col xs={6}>{this.props.bodyArmor}</Col>
 					</Row>
 					<Row id='shield'>
 						<Col className='text-center' xs={6}>
-							<img className='control-icons' src={shieldIcon}/>
+							<img className='items-icons' src={shieldIcon}/>
 						</Col>
 						<Col xs={6}>{this.props.shield}</Col>
 					</Row>
 					<Row id='gasMask'>
 						<Col className='text-center' xs={6}>
-							<img className='control-icons' src={gasMaskIcon}/>
+							<img className='items-icons' src={gasMaskIcon}/>
 						</Col>
 						<Col xs={6}>{this.props.gasMask}</Col>
 					</Row>
