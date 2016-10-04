@@ -1,90 +1,104 @@
 #app {
 	margin: none;
 	padding: none;
-	height: 100vh;
+	height: 100%;
 	width: 100%;
-	overflow: scroll;
-	#Layout {
-		height: 100%;
-		width: 100%;
-		margin: none;
+	margin: none;
+	#stateHolder {
 		padding: none;
-		color: black;
-		background-color: white;
-		background-position: fixed;
-		#stateHolder {
-			margin: none;
-			padding: none;
+		margin: none;
+		width: 100%;
+		height: 100%;
+		background-color: black;
+		// game conrols component ---------------
+		#controls {
+			padding: 2%;
+			padding-bottom: 0;
+			color: white;
+			background-color: black;
+			border: solid black 1px;
+			height: 25%;
 			width: 100%;
-			#controls {
-				margin: none;
-				position: fixed;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				padding-left: 2.5%;
-				color: white;
-				background-color: #262626;
-				#playBtn {
-					border: solid red 5px;
-					color: black;
-					background-color: green;
-				}
-			}
-			#board {
-				margin: none;
+			position: fixed;
+			top: 0;
+			.control-row {
 				padding: none;
-				width: 90vw;
-				height: 90vw;
-				margin-top: 2.5vh;
-				box-shadow: inset .5px .5px .5px .5px 0px black;
-				.boardRow {
+				margin: none;
+				height: 33%;
+				#playBtn {
+					background-color: green;
+					color: white;
+				}
+				.itemBtns {
 					margin: none;
 					padding: none;
-					width: 100%;
-					height: 1%;
-					.boardBlock {
-						margin: none;
-						padding: none;
-						height: 100%;
-						width: 1%;
-						font-size: 5px;
-						float: left;
-						background-color: transparent;
+					height: inherit;
+					width: inherit;
+					background-color: green;
+					.control-icons {
+						height: 50px;
+						width: 50px;
 					}
-					.gas {
-						background-color: green;
-					}
-					.dark {
-						background-color: white;
-					}
-					.inDark {
-						opacity: .15;
-					}
-					.wall {
-						font-size: 3px;
-						background-color: #262626;
-						box-shadow: inset .25px .25px .25px 0px black;
-					}
-					.icons {
-						padding: none;
-						margin: none;
-						height: 100%;
-						width: 100%;
+				}
+				.control-icons {
+					height: 50px;
+					width: 50px;
+				}
+				.text {
+					font-size: 150%;
+					#ek {
+						color: red;
 					}
 				}
 			}
-			.control-icons {
-				height: 75%;
-				width: 75%;
-				margin: 5%;
+			#bottomRow {
+				position: relative;
+				bottom: 0;
 			}
-			.items-icons {
-				height: 50%;
-				width: 50%;
-			}
-			#healthMeter {
-				border-radius: 100%;
+		}
+
+		#board {
+			margin: none;
+			padding: none;
+			width: 90vw;
+			height: 90vw;
+			margin-top: 14%;
+			margin-right: 5vw;
+			margin-left: 5vw;
+			box-shadow: inset .5px .5px .5px .5px 0px black;
+			.boardRow {
+				width: 100%;
+				height: 1%;
+				.boardBlock {
+					margin: none;
+					padding: none;
+					height: 100%;
+					width: 1%;
+					font-size: 5px;
+					float: left;
+					background-color: grey;
+				}
+				.gas {
+					background-color: green;
+				}
+				.dark {
+					background-color: black;
+				}
+				.inDark {
+					background-color: black;
+					opacity: .1;
+				}
+				.wall {
+					font-size: 3px;
+					background-color: #262626;
+					box-shadow: inset .25px .25px .25px 0px black;
+				}
+				.icons {
+					padding: none;
+					margin: none;
+					height: 100%;
+					width: 100%;
+				}
 			}
 		}
 	}

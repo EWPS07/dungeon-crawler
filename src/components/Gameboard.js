@@ -41,11 +41,11 @@ class Gameboard extends React.Component {
 		let activeCol = this.props.activeCol
 		return(
 			<div id='board'>
-				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowUp" onKeyHandle={this.props.upArrow}/>
-				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowDown" onKeyHandle={this.props.downArrow}/>
+				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowUp" 	 onKeyHandle={this.props.upArrow}/>
+				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowDown"  onKeyHandle={this.props.downArrow}/>
 				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowRight" onKeyHandle={this.props.rightArrow}/>
-				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowLeft" onKeyHandle={this.props.leftArrow}/>
-				<KeyHandler keyEventName={KEYDOWN} keyValue=" " onKeyHandle={this.props.interact}/>
+				<KeyHandler keyEventName={KEYDOWN} keyValue="ArrowLeft"  onKeyHandle={this.props.leftArrow}/>
+				<KeyHandler keyEventName={KEYDOWN} keyValue=" " 	     onKeyHandle={this.props.interact}/>
 				{
 					this.props.level.map(function(row, index) {
 						let currRow = index

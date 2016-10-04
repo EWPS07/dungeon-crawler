@@ -35,7 +35,8 @@ class GameStateController extends React.Component {
 				weapon: 'fists',
 				weaponIcon: require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/fists.png'),
 				specialAmmo: 0,
-				enemiesKilled: 0
+				enemiesKilled: 0,
+				syringeTaken: false
 			},
 			actionObject: undefined
 		}
@@ -477,8 +478,9 @@ class GameStateController extends React.Component {
 			levelOne[newWeapon[[0]]][newWeapon[1]].content = 'rifle'
 			stuff.splice(weaponIndex, 1)
 		}
+		levelOne[45][46].content = 'syringe'
 		this.setState({level: levelOne})
-		this.setState({activeRow: 75, activeCol: 60})
+		this.setState({activeRow: 2, activeCol: 2})
 	}
 
 
@@ -546,11 +548,19 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequiped') {
-					this.state.playerStats.health-=5
+					if(this.state.playerStats.syringeTaken === true) {
+						this.state.playerStats.health-=3
+					}
+					else {
+						this.state.playerStats.health-=5
+					}
 					this.setState({
 						playerStats: this.state.playerStats
 					})
 				}
+			}
+			else {
+				this.state.playerStats.syringeTaken = false
 			}
 		}
 		this.illuminate()
@@ -606,11 +616,19 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequiped') {
-					this.state.playerStats.health-=5
+					if(this.state.playerStats.syringeTaken === true) {
+						this.state.playerStats.health-=3
+					}
+					else {
+						this.state.playerStats.health-=5
+					}
 					this.setState({
 						playerStats: this.state.playerStats
 					})
 				}
+			}
+			else {
+				this.state.playerStats.syringeTaken = false
 			}
 		}
 		this.illuminate()
@@ -667,11 +685,19 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequiped') {
-					this.state.playerStats.health-=5
+					if(this.state.playerStats.syringeTaken === true) {
+						this.state.playerStats.health-=3
+					}
+					else {
+						this.state.playerStats.health-=5
+					}
 					this.setState({
 						playerStats: this.state.playerStats
 					})
 				}
+			}
+			else {
+				this.state.playerStats.syringeTaken = false
 			}
 		}
 		this.illuminate()
@@ -728,11 +754,19 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequiped') {
-					this.state.playerStats.health-=5
+					if(this.state.playerStats.syringeTaken === true) {
+						this.state.playerStats.health-=3
+					}
+					else {
+						this.state.playerStats.health-=5
+					}
 					this.setState({
 						playerStats: this.state.playerStats
 					})
 				}
+			}
+			else {
+				this.state.playerStats.syringeTaken = false
 			}
 		}
 		this.illuminate()
@@ -771,13 +805,124 @@ class GameStateController extends React.Component {
 
 	// use items --------------------------------------
 	useMatch(e) {
-		console.log('using matches')
+		var min
+		var Min
+		var max
+		var Max
+		if(this.state.activeRow<6) {
+			min = 0
+		}
+		else {
+			min = this.state.activeRow-5
+		}
+		if(this.state.activeRow>94) {
+			max = 99
+		}
+		else {
+			max = this.state.activeRow+5
+		}
+		if(this.state.activeCol<6) {
+			Min = 0
+		}
+		else {
+			Min = this.state.activeCol-5
+		}
+		if(this.state.activeCol>94) {
+			Max = 99
+		}
+		else {
+			Max = this.state.activeCol+5
+		}
+		for(var m=min;m<max;m++) {
+			for(var M=Min;M<Max;M++) {
+				this.state.level[m][M].dark = false
+			}
+		}
+		this.setState({
+			level: this.state.level
+		})
 	}
 	useLighter(e) {
-		console.log('using lighter')
+		var min
+		var Min
+		var max
+		var Max
+		if(this.state.activeRow<9) {
+			min = 0
+		}
+		else {
+			min = this.state.activeRow-8
+		}
+		if(this.state.activeRow>91) {
+			max = 99
+		}
+		else {
+			max = this.state.activeRow+8
+		}
+		if(this.state.activeCol<9) {
+			Min = 0
+		}
+		else {
+			Min = this.state.activeCol-8
+		}
+		if(this.state.activeCol>91) {
+			Max = 99
+		}
+		else {
+			Max = this.state.activeCol+8
+		}
+		for(var m=min;m<max;m++) {
+			for(var M=Min;M<Max;M++) {
+				this.state.level[m][M].dark = false
+			}
+		}
+		this.setState({
+			level: this.state.level
+		})
+		this.setState({
+			level: this.state.level
+		})
 	}
 	useFlashlight(e) {
-		console.log('using flashLight')
+		var min
+		var Min
+		var max
+		var Max
+		if(this.state.activeRow<13) {
+			min = 0
+		}
+		else {
+			min = this.state.activeRow-12
+		}
+		if(this.state.activeRow>87) {
+			max = 99
+		}
+		else {
+			max = this.state.activeRow+12
+		}
+		if(this.state.activeCol<13) {
+			Min = 0
+		}
+		else {
+			Min = this.state.activeCol-12
+		}
+		if(this.state.activeCol>87) {
+			Max = 99
+		}
+		else {
+			Max = this.state.activeCol+12
+		}
+		for(var m=min;m<max;m++) {
+			for(var M=Min;M<Max;M++) {
+				this.state.level[m][M].dark = false
+			}
+		}
+		this.setState({
+			level: this.state.level
+		})
+		this.setState({
+			level: this.state.level
+		})
 	}
 	useFirstAid(e) {
 		if(this.state.playerStats.firstAid>0) {
@@ -792,6 +937,19 @@ class GameStateController extends React.Component {
 		}
 	}
 	useSyringe(e) {
+		if(this.state.playerStats.syringe>0) {
+			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
+				this.state.playerStats.syringe-=1
+				this.state.playerStats.syringeTaken = true
+				this.setState({
+					playerStats: this.state.playerStats
+				})
+			}
+			else {
+				alert("This won't help, unless you're taking on gas damage!")
+			}
+		
+		}
 		console.log('using syringe')
 	}
 	useKey(e) {
@@ -812,7 +970,9 @@ class GameStateController extends React.Component {
 				}
 				else {
 					alert("Sorry, you didn't get the door open")
-					this.setState({level: this.state.level})
+					this.setState({
+						level: this.state.level
+					})
 				}
 			}
 		}
@@ -1037,7 +1197,9 @@ class GameStateController extends React.Component {
 			this.state.actionObject === 'matches' ||
 			this.state.actionObject === 'lighter' ||
 			this.state.actionObject === 'flashLight' ||
-			this.state.actionObject === 'key') {
+			this.state.actionObject === 'key' ||
+			this.state.actionObject === 'specialAmmo' ||
+			this.state.actionObject === 'elixir') {
 			this.pickup()
 		}
 		else if(this.state.actionObject === 'lockedDoor') {
@@ -1052,8 +1214,6 @@ class GameStateController extends React.Component {
 				this.state.level[i][I].dark = true
 			}
 		}
-		this.setState({level: this.state.level})
-
 		this.state.level[this.state.activeRow][this.state.activeCol].dark = false
 			if(this.state.activeCol>0) {
 				this.state.level[this.state.activeRow][this.state.activeCol-1].dark = false
@@ -1091,45 +1251,41 @@ class GameStateController extends React.Component {
 
 	render() {
 		return(
-			<div id='stateHolder'>
-				<Row>
-					<Col xs={2}>
-						<Controls play={this.levelOne.bind(this)}
-							health={this.state.playerStats.health}
-							enemiesKilled={this.state.playerStats.enemiesKilled}
-							matches={this.state.playerStats.matches}
-							lighters={this.state.playerStats.lighters}
-							flashlight={this.state.playerStats.flashlight}
-							keys={this.state.playerStats.keys}
-							firstAid={this.state.playerStats.firstAid}
-							syringe={this.state.playerStats.syringe}
-							bodyArmor={this.state.playerStats.bodyArmor}
-							shield={this.state.playerStats.shield}
-							gasMask={this.state.playerStats.gasMask}
-							weapon={this.state.playerStats.weapon}
-							weaponIcon={this.state.playerStats.weaponIcon}
-							healthNotification={this.healthNotification.bind(this)}
-							useFirstAid={this.useFirstAid.bind(this)}
-							useSyringe={this.useSyringe.bind(this)}
-							useKey={this.useKey.bind(this)}
-							useMatch={this.useMatch.bind(this)}
-							useLighter={this.useLighter.bind(this)}
-							useFlashlight={this.useFlashlight.bind(this)}
-							/>
-					</Col>
-					<Col xs={10}>
-						<Gameboard
-							level={this.state.level}
-							activeRow={this.state.activeRow}
-							activeCol={this.state.activeCol}
-							leftArrow={this.leftArrow.bind(this)}
-							rightArrow={this.rightArrow.bind(this)}
-							upArrow={this.upArrow.bind(this)}
-							downArrow={this.downArrow.bind(this)}
-							interact={this.interact.bind(this)}
-						/>
-					</Col>
-				</Row>
+			<div id='stateHolder'>					
+				
+				<Gameboard
+					level={this.state.level}
+					activeRow={this.state.activeRow}
+					activeCol={this.state.activeCol}
+					leftArrow={this.leftArrow.bind(this)}
+					rightArrow={this.rightArrow.bind(this)}
+					upArrow={this.upArrow.bind(this)}
+					downArrow={this.downArrow.bind(this)}
+					interact={this.interact.bind(this)}
+				/>
+				<Controls play={this.levelOne.bind(this)}
+					health={this.state.playerStats.health}
+					enemiesKilled={this.state.playerStats.enemiesKilled}
+					matches={this.state.playerStats.matches}
+					lighters={this.state.playerStats.lighters}
+					flashlight={this.state.playerStats.flashlight}
+					keys={this.state.playerStats.keys}
+					firstAid={this.state.playerStats.firstAid}
+					syringe={this.state.playerStats.syringe}
+					bodyArmor={this.state.playerStats.bodyArmor}
+					shield={this.state.playerStats.shield}
+					gasMask={this.state.playerStats.gasMask}
+					weapon={this.state.playerStats.weapon}
+					weaponIcon={this.state.playerStats.weaponIcon}
+					healthNotification={this.healthNotification.bind(this)}
+					useFirstAid={this.useFirstAid.bind(this)}
+					useSyringe={this.useSyringe.bind(this)}
+					useKey={this.useKey.bind(this)}
+					useMatch={this.useMatch.bind(this)}
+					useLighter={this.useLighter.bind(this)}
+					useFlashlight={this.useFlashlight.bind(this)}
+					focusedItemEnemy={this.state.actionObject}
+				/>
 			</div>
 		)
 	}
