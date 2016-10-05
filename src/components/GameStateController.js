@@ -523,8 +523,8 @@ class GameStateController extends React.Component {
 			levelOne[newWeapon[[0]]][newWeapon[1]].content = 'rifle'
 			stuff.splice(weaponIndex, 1)
 		}
-		this.state.activeRow= 1
-		this.state.activeCol=1
+		this.state.activeRow= 46
+		this.state.activeCol=48
 		this.state.previousPosition= []
 		this.state.playerStats= {}
 		this.state.playerStats.health= 100
@@ -562,7 +562,6 @@ class GameStateController extends React.Component {
 
 
 
-	// PLAYER MOVEMENT WITH ARROWS --------------------------------------------------
 	// lock player to enemy ----------------------
 	forceFight(e) {
 		if(this.state.level[this.state.activeRow][this.state.activeCol].content == 'crazyInmate' ||
@@ -639,6 +638,7 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequipped') {
+					
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -648,6 +648,9 @@ class GameStateController extends React.Component {
 					this.setState({
 						playerStats: this.state.playerStats
 					})
+					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						alert("Watch out, you're breathing in gas!")
+					}
 				}
 			}
 			else {
@@ -710,6 +713,7 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequipped') {
+					
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -719,6 +723,9 @@ class GameStateController extends React.Component {
 					this.setState({
 						playerStats: this.state.playerStats
 					})
+					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						alert("Watch out, you're breathing in gas!")
+					}
 				}
 			}
 			else {
@@ -782,6 +789,7 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequipped') {
+					
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -791,6 +799,9 @@ class GameStateController extends React.Component {
 					this.setState({
 						playerStats: this.state.playerStats
 					})
+					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						alert("Watch out, you're breathing in gas!")
+					}
 				}
 			}
 			else {
@@ -854,6 +865,7 @@ class GameStateController extends React.Component {
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 				if(this.state.playerStats.gasMask === 'unequipped') {
+					
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -863,6 +875,9 @@ class GameStateController extends React.Component {
 					this.setState({
 						playerStats: this.state.playerStats
 					})
+					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						alert("Watch out, you're breathing in gas!")
+					}
 				}
 			}
 			else {

@@ -33,7 +33,7 @@ class Controls extends React.Component {
 						<span className='text'><img className='control-icons roundIconBorder'src={healthMeterIcon}/> {this.props.health}%</span>
 					</Col>
 					<Col xs={2} className='text-center'>
-						<span className='text'><img className='control-icons roundIconBorder'src={this.props.weaponIcon}/> is {this.props.bodyArmor}</span>
+						<span className='text'><img className='control-icons roundIconBorder'src={this.props.weaponIcon}/> is equipped</span>
 					</Col>
 					<Col xs={2} className='text-center'>
 						<span className='text'><img className='control-icons roundIconBorder'src={bodyArmorIcon}/> is {this.props.bodyArmor}</span>

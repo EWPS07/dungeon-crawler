@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9879339a68c67f304cba"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "626e040d1b76e65dbce7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -13974,8 +13974,7 @@
 								'span',
 								{ className: 'text' },
 								_react2.default.createElement('img', { className: 'control-icons roundIconBorder', src: this.props.weaponIcon }),
-								' is ',
-								this.props.bodyArmor
+								' is equipped'
 							)
 						),
 						_react2.default.createElement(
@@ -14632,8 +14631,8 @@
 					levelOne[_newWeapon3[[0]]][_newWeapon3[1]].content = 'rifle';
 					stuff.splice(_weaponIndex3, 1);
 				}
-				this.state.activeRow = 1;
-				this.state.activeCol = 1;
+				this.state.activeRow = 46;
+				this.state.activeCol = 48;
 				this.state.previousPosition = [];
 				this.state.playerStats = {};
 				this.state.playerStats.health = 100;
@@ -14669,7 +14668,6 @@
 				});
 			}
 
-			// PLAYER MOVEMENT WITH ARROWS --------------------------------------------------
 			// lock player to enemy ----------------------
 
 		}, {
@@ -14748,6 +14746,7 @@
 					}
 					if (this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 						if (this.state.playerStats.gasMask === 'unequipped') {
+
 							if (this.state.playerStats.syringeTaken === true) {
 								this.state.playerStats.health -= 3;
 							} else {
@@ -14756,6 +14755,9 @@
 							this.setState({
 								playerStats: this.state.playerStats
 							});
+							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								alert("Watch out, you're breathing in gas!");
+							}
 						}
 					} else {
 						this.state.playerStats.syringeTaken = false;
@@ -14817,6 +14819,7 @@
 					}
 					if (this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 						if (this.state.playerStats.gasMask === 'unequipped') {
+
 							if (this.state.playerStats.syringeTaken === true) {
 								this.state.playerStats.health -= 3;
 							} else {
@@ -14825,6 +14828,9 @@
 							this.setState({
 								playerStats: this.state.playerStats
 							});
+							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								alert("Watch out, you're breathing in gas!");
+							}
 						}
 					} else {
 						this.state.playerStats.syringeTaken = false;
@@ -14887,6 +14893,7 @@
 					}
 					if (this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 						if (this.state.playerStats.gasMask === 'unequipped') {
+
 							if (this.state.playerStats.syringeTaken === true) {
 								this.state.playerStats.health -= 3;
 							} else {
@@ -14895,6 +14902,9 @@
 							this.setState({
 								playerStats: this.state.playerStats
 							});
+							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								alert("Watch out, you're breathing in gas!");
+							}
 						}
 					} else {
 						this.state.playerStats.syringeTaken = false;
@@ -14957,6 +14967,7 @@
 					}
 					if (this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
 						if (this.state.playerStats.gasMask === 'unequipped') {
+
 							if (this.state.playerStats.syringeTaken === true) {
 								this.state.playerStats.health -= 3;
 							} else {
@@ -14965,6 +14976,9 @@
 							this.setState({
 								playerStats: this.state.playerStats
 							});
+							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								alert("Watch out, you're breathing in gas!");
+							}
 						}
 					} else {
 						this.state.playerStats.syringeTaken = false;
