@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "80a30ab9eb70f771b782"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "62b56b7c0ac292031d33"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -14040,7 +14040,18 @@
 						{ id: 'bottomRow', className: 'control-row' },
 						_react2.default.createElement(
 							_Col2.default,
-							{ xs: 12, className: 'text-center' },
+							{ xs: 3, className: 'text-center' },
+							_react2.default.createElement(
+								'p',
+								null,
+								'Use the arrow keys to navigate the dungeon,',
+								_react2.default.createElement('br', null),
+								'and the space bar to interact with objects and enemies'
+							)
+						),
+						_react2.default.createElement(
+							_Col2.default,
+							{ xs: 6, className: 'text-center' },
 							_react2.default.createElement(
 								_ButtonGroup2.default,
 								null,
@@ -14111,7 +14122,8 @@
 									)
 								)
 							)
-						)
+						),
+						_react2.default.createElement(_Col2.default, { xs: 3 })
 					)
 				);
 			}

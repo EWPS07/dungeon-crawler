@@ -51,7 +51,14 @@ class Controls extends React.Component {
 					</Col>
 				</Row>
 				<Row id='bottomRow'className='control-row'>
-					<Col xs={12} className='text-center'>
+					<Col xs={3} className='text-center'>
+						<p>
+							Use the arrow keys to navigate the dungeon,
+							<br/>
+							and the space bar to interact with objects and enemies
+						</p>
+					</Col>
+					<Col xs={6} className='text-center'>
 						<ButtonGroup>
 							<Button onClick={this.props.useFirstAid}className='itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
 							<Button onClick={this.props.useSyringe}className='itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
@@ -61,6 +68,7 @@ class Controls extends React.Component {
 							<Button onClick={this.props.useFlashlight}className='itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
 						</ButtonGroup>
 					</Col>
+					<Col xs={3}></Col>
 				</Row>
 					
 			</div>
