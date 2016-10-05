@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e587736f8a506bff5bb5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9879339a68c67f304cba"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -15014,6 +15014,7 @@
 			}
 
 			// use items --------------------------------------
+			// light a match --------------------------------
 
 		}, {
 			key: 'useMatch',
@@ -15055,84 +15056,113 @@
 					});
 				}
 			}
+			// use a lighter ----------------------------------
+
 		}, {
 			key: 'useLighter',
 			value: function useLighter(e) {
-				var min;
-				var Min;
-				var max;
-				var Max;
-				if (this.state.activeRow < 9) {
-					min = 0;
-				} else {
-					min = this.state.activeRow - 8;
-				}
-				if (this.state.activeRow > 91) {
-					max = 99;
-				} else {
-					max = this.state.activeRow + 8;
-				}
-				if (this.state.activeCol < 9) {
-					Min = 0;
-				} else {
-					Min = this.state.activeCol - 8;
-				}
-				if (this.state.activeCol > 91) {
-					Max = 99;
-				} else {
-					Max = this.state.activeCol + 8;
-				}
-				for (var m = min; m < max; m++) {
-					for (var M = Min; M < Max; M++) {
-						this.state.level[m][M].dark = false;
+				if (this.state.playerStats.lighters > 0) {
+					var fullOrEmpty = Math.floor(Math.random(5 - 1) * 5) + 1;
+
+					if (fullOrEmpty > 1) {
+						var min;
+						var Min;
+						var max;
+						var Max;
+						if (this.state.activeRow < 9) {
+							min = 0;
+						} else {
+							min = this.state.activeRow - 8;
+						}
+						if (this.state.activeRow > 91) {
+							max = 99;
+						} else {
+							max = this.state.activeRow + 8;
+						}
+						if (this.state.activeCol < 9) {
+							Min = 0;
+						} else {
+							Min = this.state.activeCol - 8;
+						}
+						if (this.state.activeCol > 91) {
+							Max = 99;
+						} else {
+							Max = this.state.activeCol + 8;
+						}
+						for (var m = min; m < max; m++) {
+							for (var M = Min; M < Max; M++) {
+								this.state.level[m][M].dark = false;
+							}
+						}
+						this.setState({
+							level: this.state.level
+						});
+						this.setState({
+							level: this.state.level
+						});
+					} else {
+						this.state.playerStats.lighters -= 1;
+						this.setState({
+							playerStats: this.state.playerStats
+						});
+						alert("Sorry, your lighter ran out of fluid!");
 					}
 				}
-				this.setState({
-					level: this.state.level
-				});
-				this.setState({
-					level: this.state.level
-				});
 			}
+			// use a flashlight ---------------------------------
+
 		}, {
 			key: 'useFlashlight',
 			value: function useFlashlight(e) {
-				var min;
-				var Min;
-				var max;
-				var Max;
-				if (this.state.activeRow < 13) {
-					min = 0;
-				} else {
-					min = this.state.activeRow - 12;
-				}
-				if (this.state.activeRow > 87) {
-					max = 99;
-				} else {
-					max = this.state.activeRow + 12;
-				}
-				if (this.state.activeCol < 13) {
-					Min = 0;
-				} else {
-					Min = this.state.activeCol - 12;
-				}
-				if (this.state.activeCol > 87) {
-					Max = 99;
-				} else {
-					Max = this.state.activeCol + 12;
-				}
-				for (var m = min; m < max; m++) {
-					for (var M = Min; M < Max; M++) {
-						this.state.level[m][M].dark = false;
+				if (this.state.playerStats.flashlight > 0) {
+					var deadOrNot = Math.floor(Math.random(10 - 1) * 10) + 1;
+					if (deadOrNot > 1) {
+						var min;
+						var Min;
+						var max;
+						var Max;
+						if (this.state.activeRow < 13) {
+							min = 0;
+						} else {
+							min = this.state.activeRow - 12;
+						}
+						if (this.state.activeRow > 87) {
+							max = 99;
+						} else {
+							max = this.state.activeRow + 12;
+						}
+						if (this.state.activeCol < 13) {
+							Min = 0;
+						} else {
+							Min = this.state.activeCol - 12;
+						}
+						if (this.state.activeCol > 87) {
+							Max = 99;
+						} else {
+							Max = this.state.activeCol + 12;
+						}
+						for (var m = min; m < max; m++) {
+							for (var M = Min; M < Max; M++) {
+								this.state.level[m][M].dark = false;
+							}
+						}
+						this.setState({
+							level: this.state.level
+						});
+						this.setState({
+							level: this.state.level
+						});
+					} else {
+						this.state.playerStats.flashlight -= 1;
+						this.setState({
+							playerStats: this.state.playerStats
+						});
+						alert("Sorry, your batteries are dead!");
 					}
 				}
-				this.setState({
-					level: this.state.level
-				});
-				this.setState({
-					level: this.state.level
-				});
 			}
+			// use a firstaid kit -------------------------
+
 		}, {
 			key: 'useFirstAid',
 			value: function useFirstAid(e) {
@@ -15147,6 +15177,8 @@
 					});
 				}
 			}
+			// use a syringe -------------------------------
+
 		}, {
 			key: 'useSyringe',
 			value: function useSyringe(e) {
@@ -15163,6 +15195,8 @@
 				}
 				console.log('using syringe');
 			}
+			// use a key -----------------------------------
+
 		}, {
 			key: 'useKey',
 			value: function useKey(e) {
