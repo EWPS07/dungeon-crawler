@@ -24,7 +24,7 @@ class GameStateController extends React.Component {
 				flashlight: 0,
 				firstAid: 0,
 				syringe: 0,
-				keys: 1,
+				keys: 0,
 				bossKey: 0,
 				bodyArmor: 'unequiped',
 				bodyArmorIcon: undefined,
@@ -789,7 +789,7 @@ class GameStateController extends React.Component {
 		if(this.state.actionObject === 'flashLight') {
 			this.state.playerStats.flashlight+=1
 		}
-		if(this.state.actionObject === 'key') {
+		if(this.state.actionObject === 'key' || this.state.actionObject === 'bossKey') {
 			this.state.playerStats.keys+=1
 		}
 		if(this.state.actionObject === 'firstAid') {
@@ -963,17 +963,23 @@ class GameStateController extends React.Component {
 			}
 			else {
 				let lockOrUnlock = Math.floor(Math.random()*((1)-0+1)+0)
-				if(lockOrUnlock === 1) {
-					alert("Success!")
+				if(this.state.playerStats.bossKey === true) {
 					this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-					this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
 				}
+				else {
+					if(lockOrUnlock === 1) {
+						alert("Success!")
+						this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
+						this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
+					}
 				else {
 					alert("Sorry, you didn't get the door open")
 					this.setState({
 						level: this.state.level
 					})
 				}
+				}
+				
 			}
 		}
 	}
@@ -1198,6 +1204,7 @@ class GameStateController extends React.Component {
 			this.state.actionObject === 'lighter' ||
 			this.state.actionObject === 'flashLight' ||
 			this.state.actionObject === 'key' ||
+			this.state.actionObject === 'bossKey' ||
 			this.state.actionObject === 'specialAmmo' ||
 			this.state.actionObject === 'elixir') {
 			this.pickup()
