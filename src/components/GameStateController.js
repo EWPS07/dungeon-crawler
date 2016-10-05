@@ -13,7 +13,8 @@ import Col from 'react-bootstrap/lib/Col'
 class GameStateController extends React.Component {
 	constructor() {
 		super()
-		this.state={level: [],
+		this.state={
+			level: [],
 			activeRow: 0,
 			activeCol:0,
 			previousPosition: [],
@@ -25,18 +26,19 @@ class GameStateController extends React.Component {
 				firstAid: 0,
 				syringe: 0,
 				keys: 0,
-				bossKey: 0,
-				bodyArmor: 'unequiped',
+				bossKey: false,
+				bodyArmor: 'unequipped',
 				bodyArmorIcon: undefined,
-				shield: 'unequiped',
+				shield: 'unequipped',
 				shieldIcon: undefined,
-				gasMask: 'unequiped',
+				gasMask: 'unequipped',
 				gasMaskIcon: undefined,
 				weapon: 'fists',
 				weaponIcon: require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/fists.png'),
-				specialAmmo: 0,
+				specialAmmo: false,
 				enemiesKilled: 0,
-				syringeTaken: false
+				syringeTaken: false,
+				elixir: false
 			},
 			actionObject: undefined
 		}
@@ -234,27 +236,61 @@ class GameStateController extends React.Component {
 
 
 		// gas blocks -----------------------
-		for(var g=32;g<35;g++) {
-			for(var G=36;G<60;G++) {
-				levelOne[g][G].gas = true
+		var gasAmnt = Math.floor(Math.random(2-1)*2)+1
+		if(gasAmnt > 1) {
+			// gas block 1 -----------------
+			for(var g=32;g<35;g++) {
+				for(var G=36;G<60;G++) {
+					levelOne[g][G].gas = true
+				}
+			}
+			for(var g=35;g<38;g++) {
+				for(var G=32;G<60;G++) {
+					levelOne[g][G].gas = true
+				}
+			}
+			for(var g=38;g<39;g++) {
+				for(var G=36;G<60;G++) {
+					levelOne[g][G].gas = true
+				}
+			}
+			for(var g=39;g<44;g++) {
+				for(var G=40;G<58;G++) {
+					levelOne[g][G].gas = true
+				}
+			}
+
+			// gas block 2 ----------------
+
+			for(var g=74;g<83;g++) {
+				for(var G=12;G<28;G++) {
+					levelOne[g][G].gas = true
+				}
+			}
+			
+			// gas block 3 -----------------
+			for(var g=13;g<26;g++) {
+				for(var G=25;G<85;G++) {
+					levelOne[g][G].gas = true
+				}
 			}
 		}
-		for(var g=35;g<38;g++) {
-			for(var G=32;G<60;G++) {
-				levelOne[g][G].gas = true
+		else {
+			for(var g=74;g<83;g++) {
+				for(var G=12;G<28;G++) {
+					levelOne[g][G].gas = true
+				}
 			}
-		}
-		for(var g=38;g<39;g++) {
-			for(var G=36;G<60;G++) {
-				levelOne[g][G].gas = true
-			}
-		}
-		for(var g=39;g<44;g++) {
-			for(var G=40;G<58;G++) {
-				levelOne[g][G].gas = true
+			
+			// gas block 3 -----------------
+			for(var g=13;g<26;g++) {
+				for(var G=55;G<85;G++) {
+					levelOne[g][G].gas = true
+				}
 			}
 		}
 
+		
 
 		var stuff = [
 			[8, 26],
@@ -318,7 +354,16 @@ class GameStateController extends React.Component {
 			[64, 12],
 			[50, 12],
 			[4, 4],
-			[5, 5]
+			[5, 5],
+			[75, 80],
+			[75, 44],
+			[34, 32],
+			[75, 33],
+			[75, 34],
+			[88, 35],
+			[60, 36],
+			[38, 37],
+			[58, 38]
 		]
 
 		// populate enemies --------
@@ -360,7 +405,7 @@ class GameStateController extends React.Component {
 
 		// populate health --------
 		// first aid pack
-		for(var h=1;h<=8;h++) {
+		for(var h=1;h<=10;h++) {
 			let healthIndex = Math.floor(Math.random()*((stuff.length-1)-0+1)+0);
 			let newHealth = stuff[healthIndex]
 			levelOne[newHealth[[0]]][newHealth[1]].content = 'firstAid'
@@ -376,7 +421,7 @@ class GameStateController extends React.Component {
 		}
 
 		// syringes
-		for(var h=1;h<=2;h++) {
+		for(var h=1;h<=4;h++) {
 			let healthIndex = Math.floor(Math.random()*((stuff.length-1)-0+1)+0);
 			let newHealth = stuff[healthIndex]
 			levelOne[newHealth[[0]]][newHealth[1]].content = 'syringe'
@@ -412,7 +457,7 @@ class GameStateController extends React.Component {
 		}
 
 		// lighters
-		for(var i=1;i<=2;i++) {
+		for(var i=1;i<=4;i++) {
 			let itemIndex = Math.floor(Math.random()*((stuff.length-1)-0+1)+0);
 			let newItem = stuff[itemIndex]
 			levelOne[newItem[[0]]][newItem[1]].content = 'lighter'
@@ -478,9 +523,41 @@ class GameStateController extends React.Component {
 			levelOne[newWeapon[[0]]][newWeapon[1]].content = 'rifle'
 			stuff.splice(weaponIndex, 1)
 		}
+		this.state.activeRow= 1
+		this.state.activeCol=1
+		this.state.previousPosition= []
+		this.state.playerStats= {}
+		this.state.playerStats.health= 100
+		this.state.playerStats.matches= 0
+		this.state.playerStats.lighters= 0
+		this.state.playerStats.flashlight= 0
+		this.state.playerStats.firstAid= 0
+		this.state.playerStats.syringe= 0
+		this.state.playerStats.keys= 0
+		this.state.playerStats.bossKey= false
+		this.state.playerStats.bodyArmor= 'unequipped'
+		this.state.playerStats.bodyArmorIcon= undefined
+		this.state.playerStats.shield= 'unequipped'
+		this.state.playerStats.shieldIcon= undefined
+		this.state.playerStats.gasMask= 'unequipped'
+		this.state.playerStats.gasMaskIcon= undefined
+		this.state.playerStats.weapon= 'fists'
+		this.state.playerStats.weaponIcon= require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/fists.png')
+		this.state.playerStats.specialAmmo= false
+		this.state.playerStats.enemiesKilled= 0
+		this.state.playerStats.syringeTaken= false
+		this.state.playerStats.elixir = false
+		this.state.actionObject= undefined
+		
 		levelOne[45][46].content = 'syringe'
-		this.setState({level: levelOne})
-		this.setState({activeRow: 2, activeCol: 2})
+		this.state.level = levelOne
+		this.setState({
+			activeRow: this.state.activeRow,
+			activeCol: this.state.activeCol,
+			level: this.state.level,
+			playerStats: this.state.playerStats,
+			actionObject: this.state.actionObject
+		})
 	}
 
 
@@ -497,9 +574,23 @@ class GameStateController extends React.Component {
 		}
 	}
 
+	// pop-up enemies ----------------------------
+	enemyTrap(e) {
+		this.state.level[7][75].content = 'guardDogs'
+		this.state.level[8][74].content = 'guard'
+		this.state.level[9][75].content = 'guardDogs'
+		this.state.level[8][85].content = 'pistol'
+		this.setState({
+			level: this.state.level
+		})
+	}
+
 	// left arrow movement -----------------------
 	leftArrow(e) {
 		e.preventDefault()
+		if((this.state.activeRow === 7 || this.state.activeRow === 8 || this.state.activeRow === 9) && this.state.activeCol === 82) {
+			this.enemyTrap()
+		}
 		if(this.state.activeCol>0) {
 			if(this.forceFight() === true) {
 				this.setState({
@@ -547,7 +638,7 @@ class GameStateController extends React.Component {
 				}
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
-				if(this.state.playerStats.gasMask === 'unequiped') {
+				if(this.state.playerStats.gasMask === 'unequipped') {
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -569,6 +660,9 @@ class GameStateController extends React.Component {
 	// right arrow movement ----------------------
 	rightArrow(e) {
 		e.preventDefault()
+		if((this.state.activeRow === 7 || this.state.activeRow === 8 || this.state.activeRow === 9) && this.state.activeCol === 82) {
+			this.enemyTrap()
+		}
 		if(this.state.activeCol<99) {
 			if(this.forceFight() === true) {
 				this.setState({
@@ -615,7 +709,7 @@ class GameStateController extends React.Component {
 				}
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
-				if(this.state.playerStats.gasMask === 'unequiped') {
+				if(this.state.playerStats.gasMask === 'unequipped') {
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -637,6 +731,9 @@ class GameStateController extends React.Component {
 	// up arrow movement --------------------------
 	upArrow(e) {
 		e.preventDefault()
+		if((this.state.activeRow === 7 || this.state.activeRow === 8 || this.state.activeRow === 9) && this.state.activeCol === 82) {
+			this.enemyTrap()
+		}
 		if(this.state.activeRow>0) {
 			if(this.forceFight() === true) {
 				this.setState({
@@ -684,7 +781,7 @@ class GameStateController extends React.Component {
 				}
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
-				if(this.state.playerStats.gasMask === 'unequiped') {
+				if(this.state.playerStats.gasMask === 'unequipped') {
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -706,6 +803,9 @@ class GameStateController extends React.Component {
 	// down arrow movement ------------------------
 	downArrow(e) {
 		e.preventDefault()
+		if((this.state.activeRow === 7 || this.state.activeRow === 8 || this.state.activeRow === 9) && this.state.activeCol === 82) {
+			this.enemyTrap()
+		}
 		if(this.state.activeRow<99) {
 			if(this.forceFight() === true) {
 				this.setState({
@@ -753,7 +853,7 @@ class GameStateController extends React.Component {
 				}
 			}
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
-				if(this.state.playerStats.gasMask === 'unequiped') {
+				if(this.state.playerStats.gasMask === 'unequipped') {
 					if(this.state.playerStats.syringeTaken === true) {
 						this.state.playerStats.health-=3
 					}
@@ -776,10 +876,15 @@ class GameStateController extends React.Component {
 	// pick up items ---------------------------------
 	pickup() {
 		// // items -----------------------------
-		// if(this.state.actionObject !== 'healingStation') {
-		
-		// 	this.setState({level: this.state.level})
-		// }
+		if(this.state.actionObject === 'bossKey') {
+			alert("You picked up the boss' key!")
+		}
+		if(this.state.actionObject === 'specialAmmo') {
+			alert("You picked up special rifle ammunition!")
+		}
+		if(this.state.actionObject === 'elixir') {
+			alert("You picked up a bonus health elixir!")
+		}
 		if(this.state.actionObject === 'matches') {
 			this.state.playerStats.matches+=4
 		}
@@ -791,6 +896,7 @@ class GameStateController extends React.Component {
 		}
 		if(this.state.actionObject === 'key' || this.state.actionObject === 'bossKey') {
 			this.state.playerStats.keys+=1
+			this.state.playerStats.bossKey = true
 		}
 		if(this.state.actionObject === 'firstAid') {
 			this.state.playerStats.firstAid+=1
@@ -805,42 +911,46 @@ class GameStateController extends React.Component {
 
 	// use items --------------------------------------
 	useMatch(e) {
-		var min
-		var Min
-		var max
-		var Max
-		if(this.state.activeRow<6) {
-			min = 0
-		}
-		else {
-			min = this.state.activeRow-5
-		}
-		if(this.state.activeRow>94) {
-			max = 99
-		}
-		else {
-			max = this.state.activeRow+5
-		}
-		if(this.state.activeCol<6) {
-			Min = 0
-		}
-		else {
-			Min = this.state.activeCol-5
-		}
-		if(this.state.activeCol>94) {
-			Max = 99
-		}
-		else {
-			Max = this.state.activeCol+5
-		}
-		for(var m=min;m<max;m++) {
-			for(var M=Min;M<Max;M++) {
-				this.state.level[m][M].dark = false
+		if(this.state.playerStats.matches >0) {
+			var min
+			var Min
+			var max
+			var Max
+			if(this.state.activeRow<6) {
+				min = 0
 			}
+			else {
+				min = this.state.activeRow-5
+			}
+			if(this.state.activeRow>94) {
+				max = 99
+			}
+			else {
+				max = this.state.activeRow+5
+			}
+			if(this.state.activeCol<6) {
+				Min = 0
+			}
+			else {
+				Min = this.state.activeCol-5
+			}
+			if(this.state.activeCol>94) {
+				Max = 99
+			}
+			else {
+				Max = this.state.activeCol+5
+			}
+			for(var m=min;m<max;m++) {
+				for(var M=Min;M<Max;M++) {
+					this.state.level[m][M].dark = false
+				}
+			}
+			this.state.playerStats.matches-=1
+			this.setState({
+				level: this.state.level,
+				playerStats: this.state.playerStats
+			})
 		}
-		this.setState({
-			level: this.state.level
-		})
 	}
 	useLighter(e) {
 		var min
@@ -957,29 +1067,34 @@ class GameStateController extends React.Component {
 			alert('You use this key to unlock a locked door!')
 		}
 		else {
-			if(this.state.playerStats.keys > 1) {
+			if(this.state.playerStats.bossKey === true) {
 				this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-				this.setState({level: this.state.level})
+				alert('Congratulations, you escaped the dungeon!')
 			}
 			else {
-				let lockOrUnlock = Math.floor(Math.random()*((1)-0+1)+0)
-				if(this.state.playerStats.bossKey === true) {
+				if(this.state.playerStats.keys > 1) {
 					this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
+					this.setState({level: this.state.level})
 				}
 				else {
-					if(lockOrUnlock === 1) {
-						alert("Success!")
+					let lockOrUnlock = Math.floor(Math.random()*((1)-0+1)+0)
+					if(this.state.playerStats.bossKey === true) {
 						this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-						this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
 					}
-				else {
-					alert("Sorry, you didn't get the door open")
-					this.setState({
-						level: this.state.level
-					})
+					else {
+						if(lockOrUnlock === 1) {
+							this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
+							this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
+							alert("Success!")
+						}
+						else {
+							this.setState({
+								level: this.state.level
+							})
+							alert("Sorry, you didn't get the door open")
+						}
+					}
 				}
-				}
-				
 			}
 		}
 	}
@@ -991,20 +1106,20 @@ class GameStateController extends React.Component {
 		let previousWeapon = this.state.playerStats.weapon
 		
 		if(this.state.actionObject === 'bodyArmor') {
-			if(this.state.playerStats.bodyArmor === 'unequiped') {
-				this.state.playerStats.bodyArmor = 'equiped'
+			if(this.state.playerStats.bodyArmor === 'unequipped') {
+				this.state.playerStats.bodyArmor = 'equipped'
 				this.setState({playerStats: this.state.playerStats})
 			}
 		}
 		if(this.state.actionObject === 'shield') {
-			if(this.state.playerStats.shield === 'unequiped') {
-				this.state.playerStats.shield = 'equiped'
+			if(this.state.playerStats.shield === 'unequipped') {
+				this.state.playerStats.shield = 'equipped'
 				this.setState({playerStats: this.state.playerStats})
 			}
 		}
 		if(this.state.actionObject === 'gasMask') {
-			if(this.state.playerStats.gasMask === 'unequiped') {
-				this.state.playerStats.gasMask = 'equiped'
+			if(this.state.playerStats.gasMask === 'unequipped') {
+				this.state.playerStats.gasMask = 'equipped'
 				this.setState({playerStats: this.state.playerStats})
 			}
 		}
@@ -1145,12 +1260,22 @@ class GameStateController extends React.Component {
 		if(this.state.playerStats.weapon === 'knife') {
 			playerDamagePerHit = knife.damage
 		}
-
+		if(currentEnemy === boss) {
+			if(this.state.playerStats.weapon === 'rifle' && this.state.playerStats.specialAmmo === true) {
+				playerDamagePerHit+=25
+			}
+		}
+		if(this.state.playerStats.elixir === true) {
+			this.state.playerStats.health=150
+			this.setState({
+				playerStats: this.state.playerStats
+			})
+		}
 		// protective wear adjustments ----------------
-		if(this.state.playerStats.bodyArmor === 'equiped') {
+		if(this.state.playerStats.bodyArmor === 'equipped') {
 			enemyDamagePerHit-=bodyArmor.protectionAmnt
 		}
-		if(this.state.playerStats.shield === 'equiped') {
+		if(this.state.playerStats.shield === 'equipped') {
 			enemyDamagePerHit-= shield.protectionAmnt
 		}
 
@@ -1162,7 +1287,6 @@ class GameStateController extends React.Component {
 		if(playerHitsToKill>=enmeyHitsToKill) {
 			this.state.playerStats.health = 0
 			this.setState({playerStats: this.state.playerStats})
-			alert('Sorry, you died!')
 		}
 		else {
 			let damageRecieved = playerHitsToKill*enemyDamagePerHit
@@ -1252,10 +1376,14 @@ class GameStateController extends React.Component {
 	// data notifications --------------------------------
 	healthNotification(e) {
 		if(this.state.playerStats.health < 1) {
+			this.levelOne()
 			alert('Sorry, you died!')
+			
 		}
 	}
-
+	componentDidUpdate(e) {
+		this.healthNotification()
+	}
 	render() {
 		return(
 			<div id='stateHolder'>					
@@ -1270,7 +1398,8 @@ class GameStateController extends React.Component {
 					downArrow={this.downArrow.bind(this)}
 					interact={this.interact.bind(this)}
 				/>
-				<Controls play={this.levelOne.bind(this)}
+				<Controls 
+					play={this.levelOne.bind(this)}
 					health={this.state.playerStats.health}
 					enemiesKilled={this.state.playerStats.enemiesKilled}
 					matches={this.state.playerStats.matches}

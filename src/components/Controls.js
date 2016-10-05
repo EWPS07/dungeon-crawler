@@ -25,38 +25,40 @@ class Controls extends React.Component {
 	render() {
 		return(
 			<div id='controls'>
-				<Row className='text-center control-row'>
+				<Row className='text-center control-row' id='topRow'>
 					<Button id='playBtn'onClick={this.props.play}>Play Now</Button>
 				</Row>
 				<Row className='control-row'>
-					<Col xs={2} className='text-center'>
-						<span className='text'><img className='control-icons'src={healthMeterIcon}/> {this.props.health}%</span>
-					</Col>
-					<Col xs={2} className='text-right'>
-						<img className='control-icons'src={this.props.weaponIcon}/>
+					<Col xs={3} className='text-right'>
+						<span className='text'><img className='control-icons roundIconBorder'src={healthMeterIcon}/> {this.props.health}%</span>
 					</Col>
 					<Col xs={2} className='text-center'>
-						<span className='text'><img className='control-icons'src={bodyArmorIcon}/> is {this.props.bodyArmor}</span>
+						<span className='text'><img className='control-icons roundIconBorder'src={this.props.weaponIcon}/> is {this.props.bodyArmor}</span>
 					</Col>
 					<Col xs={2} className='text-center'>
-						<span className='text'><img className='control-icons'src={shieldIcon}/> is {this.props.shield}</span>
-					</Col>
-					<Col xs={2} className='text-left'>
-						<span className='text'><img className='control-icons'src={gasMaskIcon}/> is {this.props.gasMask}</span>
+						<span className='text'><img className='control-icons roundIconBorder'src={bodyArmorIcon}/> is {this.props.bodyArmor}</span>
 					</Col>
 					<Col xs={2} className='text-center'>
-						<span className='text'><span id='ek'>{this.props.enemiesKilled}</span> enemies killed</span>
+						<span className='text'><img className='control-icons roundIconBorder'src={shieldIcon}/> is {this.props.shield}</span>
+					</Col>
+					<Col xs={3} className='text-left'>
+						<span className='text'><img className='control-icons roundIconBorder'src={gasMaskIcon}/> is {this.props.gasMask}</span>
+					</Col>
+				</Row>
+				<Row className='control-row' id='thirdRow'>
+					<Col xs={12} className='text-center'>
+						<span className='text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
 					</Col>
 				</Row>
 				<Row id='bottomRow'className='control-row'>
 					<Col xs={12} className='text-center'>
 						<ButtonGroup>
-							<Button className='itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
-							<Button className='itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
-							<Button className='itemBtns'><img className='control-icons'src={keyIcon}/><span className='text'> {this.props.keys}</span></Button>
-							<Button className='itemBtns'><img className='control-icons'src={matchesIcon}/><span className='text'> {this.props.matches}</span></Button>
-							<Button className='itemBtns'><img className='control-icons'src={lighterIcon}/><span className='text'> {this.props.lighters}</span></Button>
-							<Button className='itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
+							<Button onClick={this.props.useFirstAid}className='itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
+							<Button onClick={this.props.useSyringe}className='itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
+							<Button onClick={this.props.useKey}className='itemBtns'><img className='control-icons'src={keyIcon}/><span className='text'> {this.props.keys}</span></Button>
+							<Button onClick={this.props.useMatch}className='itemBtns'><img className='control-icons'src={matchesIcon}/><span className='text'> {this.props.matches}</span></Button>
+							<Button onClick={this.props.useLighter}className='itemBtns'><img className='control-icons'src={lighterIcon}/><span className='text'> {this.props.lighters}</span></Button>
+							<Button onClick={this.props.useFlashlight}className='itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
 						</ButtonGroup>
 					</Col>
 				</Row>

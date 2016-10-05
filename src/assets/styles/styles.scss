@@ -1,3 +1,9 @@
+$darkest: #080808;
+$nextDarkest: #1f1f1f;
+$middle: #757575;
+$nextLightest: #999999;
+$lightest: #cccccc;
+
 #app {
 	margin: none;
 	padding: none;
@@ -24,10 +30,15 @@
 			.control-row {
 				padding: none;
 				margin: none;
-				height: 33%;
+				height: 25%;
 				#playBtn {
 					background-color: green;
 					color: white;
+				}
+				.roundIconBorder {
+					border: solid black 1px;
+					border-radius: 100%;
+					background-color: white;
 				}
 				.itemBtns {
 					margin: none;
@@ -46,10 +57,21 @@
 				}
 				.text {
 					font-size: 150%;
+					color: white;
+					font-weight: bold;
 					#ek {
+						font-size: 150%;
 						color: red;
 					}
 				}
+			}
+			#topRow {
+				position: relative;
+				top: 0;
+				height: 20%;
+			}
+			#thirdRow {
+				height: 20%
 			}
 			#bottomRow {
 				position: relative;
@@ -65,7 +87,7 @@
 			margin-top: 14%;
 			margin-right: 5vw;
 			margin-left: 5vw;
-			box-shadow: inset .5px .5px .5px .5px 0px black;
+			box-shadow: inset .5px .5px .5px .5px 0px $darkest;
 			.boardRow {
 				width: 100%;
 				height: 1%;
@@ -76,22 +98,24 @@
 					width: 1%;
 					font-size: 5px;
 					float: left;
-					background-color: grey;
+					background-color: $lightest;
+				}
+				.activeBlock {
+					background-color: $lightest;
 				}
 				.gas {
 					background-color: green;
-					opacity: .5;
 				}
 				.dark {
-					background-color: black;
+					background-color: $nextDarkest;
 				}
 				.inDark {
-					background-color: black;
+					background-color: $nextDarkest;
 					opacity: .1;
 				}
 				.wall {
 					font-size: 3px;
-					background-color: #262626;
+					background-color: $nextDarkest;
 					box-shadow: inset .25px .25px .25px 0px black;
 				}
 				.icons {
