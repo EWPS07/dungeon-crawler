@@ -551,7 +551,7 @@ class GameStateController extends React.Component {
 		this.state.playerStats.flashlight= 0
 		this.state.playerStats.firstAid= 0
 		this.state.playerStats.syringe= 0
-		this.state.playerStats.keys= 2
+		this.state.playerStats.keys= 0
 		this.state.playerStats.bossKey= false
 		this.state.playerStats.bodyArmor= 'unequipped'
 		this.state.playerStats.bodyArmorIcon= undefined
