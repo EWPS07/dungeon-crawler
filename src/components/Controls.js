@@ -25,10 +25,29 @@ class Controls extends React.Component {
 	render() {
 		return(
 			<div id='controls'>
-				<Row className='text-center control-row' id='topRow'>
-					<Button id='playBtn'onClick={this.props.play}>Play Now</Button>
+				<Row id='topRow'>
+					<Col xs={3} className='text-center'>
+					</Col>
+					<Col xs={6} className='text-center'>
+						<ButtonGroup className='itemSelect'>
+							<Button onClick={this.props.useFirstAid}className='itemSelect itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
+							<Button onClick={this.props.useSyringe}className='itemSelect itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
+							<Button onClick={this.props.useKey}className='itemSelect itemBtns'><img className='control-icons'src={keyIcon}/><span className='text'> {this.props.keys}</span></Button>
+							<Button onClick={this.props.useMatch}className='itemSelect itemBtns'><img className='control-icons'src={matchesIcon}/><span className='text'> {this.props.matches}</span></Button>
+							<Button onClick={this.props.useLighter}className='itemSelect itemBtns'><img className='control-icons'src={lighterIcon}/><span className='text'> {this.props.lighters}</span></Button>
+							<Button onClick={this.props.useFlashlight}className='itemSelect itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
+						</ButtonGroup>
+					</Col>
+					<Col xs={3}></Col>
 				</Row>
-				<Row className='control-row'>
+				<Row id='secondRow'>
+					<Col xs={12} className='text-center'>
+						<span className='text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
+					</Col>
+				</Row>
+				<Row id='thirdRow'>
+				</Row>
+				<Row id='bottomRow'>
 					<Col xs={3} className='text-right'>
 						<span className='text'><img className='control-icons roundIconBorder'src={healthMeterIcon}/> {this.props.health}%</span>
 					</Col>
@@ -44,33 +63,7 @@ class Controls extends React.Component {
 					<Col xs={3} className='text-left'>
 						<span className='text'><img className='control-icons roundIconBorder'src={gasMaskIcon}/> is {this.props.gasMask}</span>
 					</Col>
-				</Row>
-				<Row className='control-row' id='thirdRow'>
-					<Col xs={12} className='text-center'>
-						<span className='text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
-					</Col>
-				</Row>
-				<Row id='bottomRow'className='control-row'>
-					<Col xs={3} className='text-center'>
-						<p>
-							Use the arrow keys to navigate the dungeon,
-							<br/>
-							and the space bar to interact with objects and enemies
-						</p>
-					</Col>
-					<Col xs={6} className='text-center'>
-						<ButtonGroup>
-							<Button onClick={this.props.useFirstAid}className='itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
-							<Button onClick={this.props.useSyringe}className='itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
-							<Button onClick={this.props.useKey}className='itemBtns'><img className='control-icons'src={keyIcon}/><span className='text'> {this.props.keys}</span></Button>
-							<Button onClick={this.props.useMatch}className='itemBtns'><img className='control-icons'src={matchesIcon}/><span className='text'> {this.props.matches}</span></Button>
-							<Button onClick={this.props.useLighter}className='itemBtns'><img className='control-icons'src={lighterIcon}/><span className='text'> {this.props.lighters}</span></Button>
-							<Button onClick={this.props.useFlashlight}className='itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
-						</ButtonGroup>
-					</Col>
-					<Col xs={3}></Col>
-				</Row>
-					
+				</Row>	
 			</div>
 			)
 		}

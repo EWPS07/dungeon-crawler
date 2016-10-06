@@ -5,6 +5,7 @@ import KeyHandler, {KEYPRESS, KEYDOWN, KEYUP} from 'react-key-handler'
 // app components ---------------
 import Gameboard from './Gameboard'
 import Controls from './Controls'
+import Greeting from './Greeting'
 
 // react-boostrap components
 import Row from 'react-bootstrap/lib/Row'
@@ -523,8 +524,8 @@ class GameStateController extends React.Component {
 			levelOne[newWeapon[[0]]][newWeapon[1]].content = 'rifle'
 			stuff.splice(weaponIndex, 1)
 		}
-		this.state.activeRow= 46
-		this.state.activeCol=48
+		this.state.activeRow= 2
+		this.state.activeCol=2
 		this.state.previousPosition= []
 		this.state.playerStats= {}
 		this.state.playerStats.health= 100
@@ -548,8 +549,6 @@ class GameStateController extends React.Component {
 		this.state.playerStats.syringeTaken= false
 		this.state.playerStats.elixir = false
 		this.state.actionObject= undefined
-		
-		levelOne[45][46].content = 'syringe'
 		this.state.level = levelOne
 		this.setState({
 			activeRow: this.state.activeRow,
@@ -1432,8 +1431,11 @@ class GameStateController extends React.Component {
 	}
 	render() {
 		return(
+
 			<div id='stateHolder'>					
-				
+				<Greeting
+					play={this.levelOne.bind(this)}
+				/>
 				<Gameboard
 					level={this.state.level}
 					activeRow={this.state.activeRow}
@@ -1445,7 +1447,6 @@ class GameStateController extends React.Component {
 					interact={this.interact.bind(this)}
 				/>
 				<Controls 
-					play={this.levelOne.bind(this)}
 					health={this.state.playerStats.health}
 					enemiesKilled={this.state.playerStats.enemiesKilled}
 					matches={this.state.playerStats.matches}
