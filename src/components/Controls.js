@@ -21,14 +21,18 @@ let firstAidIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/
 let syringeIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/glyphicons-493-medicine@3x.png')
 let elixirIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/elixir.png')
 
+
 class Controls extends React.Component {
 	render() {
 		return(
 			<div id='controls'>
 				<Row id='topRow'>
-					<Col xs={3} className='text-center'>
+					<Col xs={12} className='text-center'>
+						<span className='text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
 					</Col>
-					<Col xs={6} className='text-center'>
+				</Row>
+				<Row id='secondRow'>
+					<Col xs={12} className='text-center'>
 						<ButtonGroup className='itemSelect'>
 							<Button onClick={this.props.useFirstAid}className='itemSelect itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
 							<Button onClick={this.props.useSyringe}className='itemSelect itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
@@ -38,14 +42,6 @@ class Controls extends React.Component {
 							<Button onClick={this.props.useFlashlight}className='itemSelect itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
 						</ButtonGroup>
 					</Col>
-					<Col xs={3}></Col>
-				</Row>
-				<Row id='secondRow'>
-					<Col xs={12} className='text-center'>
-						<span className='text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
-					</Col>
-				</Row>
-				<Row id='thirdRow'>
 				</Row>
 				<Row id='bottomRow'>
 					<Col xs={3} className='text-right'>

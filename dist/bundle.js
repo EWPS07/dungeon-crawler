@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6621d80f7e1a6b863851"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "47f1baa1991138dbb151"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -6114,7 +6114,7 @@
 
 
 	// module
-	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100%;\n  width: 100%;\n  margin: none; }\n  #app #stateHolder {\n    padding: none;\n    margin: none;\n    width: 100%;\n    height: 100%;\n    background-color: #080808; }\n    #app #stateHolder #controls {\n      padding: 2%;\n      padding-bottom: 0;\n      color: #cccccc;\n      background-color: #080808;\n      border: solid #080808 1px;\n      height: 25%;\n      width: 100%;\n      position: fixed;\n      top: 0; }\n      #app #stateHolder #controls .control-row, #app #stateHolder #controls #topRow, #app #stateHolder #controls #secondRow, #app #stateHolder #controls #thirdRow, #app #stateHolder #controls #bottomRow {\n        padding: none;\n        margin: none;\n        height: inherit; }\n        #app #stateHolder #controls .control-row #playBtn, #app #stateHolder #controls #topRow #playBtn, #app #stateHolder #controls #secondRow #playBtn, #app #stateHolder #controls #thirdRow #playBtn, #app #stateHolder #controls #bottomRow #playBtn {\n          background-color: #53CC1F;\n          color: #cccccc; }\n        #app #stateHolder #controls .control-row .roundIconBorder, #app #stateHolder #controls #topRow .roundIconBorder, #app #stateHolder #controls #secondRow .roundIconBorder, #app #stateHolder #controls #thirdRow .roundIconBorder, #app #stateHolder #controls #bottomRow .roundIconBorder {\n          border: solid #080808 1px;\n          border-radius: 100%;\n          background-color: #cccccc; }\n        #app #stateHolder #controls .control-row .itemSelect .itemBtns, #app #stateHolder #controls #topRow .itemSelect .itemBtns, #app #stateHolder #controls #secondRow .itemSelect .itemBtns, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns {\n          margin: none;\n          padding: none;\n          height: inherit;\n          width: inherit;\n          background-color: #53CC1F; }\n          #app #stateHolder #controls .control-row .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #topRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #secondRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns .control-icons {\n            height: 50px;\n            width: 50px;\n            margin: none;\n            padding: none; }\n        #app #stateHolder #controls .control-row .control-icons, #app #stateHolder #controls #topRow .control-icons, #app #stateHolder #controls #secondRow .control-icons, #app #stateHolder #controls #thirdRow .control-icons, #app #stateHolder #controls #bottomRow .control-icons {\n          height: 50px;\n          width: 50px; }\n        #app #stateHolder #controls .control-row .text, #app #stateHolder #controls #topRow .text, #app #stateHolder #controls #secondRow .text, #app #stateHolder #controls #thirdRow .text, #app #stateHolder #controls #bottomRow .text {\n          font-size: 150%;\n          color: #cccccc;\n          font-weight: bold; }\n          #app #stateHolder #controls .control-row .text #ek, #app #stateHolder #controls #topRow .text #ek, #app #stateHolder #controls #secondRow .text #ek, #app #stateHolder #controls #thirdRow .text #ek, #app #stateHolder #controls #bottomRow .text #ek {\n            font-size: 150%;\n            color: #99001A; }\n      #app #stateHolder #controls #topRow {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #secondRow {\n        position: absolute;\n        top: 25%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #thirdRow {\n        height: 25%;\n        position: absolute;\n        top: 50%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #bottomRow {\n        position: absolute;\n        bottom: 0;\n        left: 0;\n        right: 0; }\n    #app #stateHolder #board {\n      margin: none;\n      padding: none;\n      width: 90vw;\n      height: 90vw;\n      margin-top: 14%;\n      margin-right: 5vw;\n      margin-left: 5vw;\n      box-shadow: inset 0.5px 0.5px 0.5px 0.5px 0px #080808; }\n      #app #stateHolder #board .boardRow {\n        width: 100%;\n        height: 1%; }\n        #app #stateHolder #board .boardRow .boardBlock {\n          margin: none;\n          padding: none;\n          height: 100%;\n          width: 1%;\n          font-size: 5px;\n          float: left;\n          background-color: #cccccc; }\n        #app #stateHolder #board .boardRow .activeBlock {\n          background-color: #cccccc; }\n        #app #stateHolder #board .boardRow .gas {\n          background-color: #53CC1F; }\n        #app #stateHolder #board .boardRow .dark {\n          background-color: #080808; }\n        #app #stateHolder #board .boardRow .inDark {\n          background-color: #080808;\n          color: #1f1f1f;\n          opacity: .1; }\n        #app #stateHolder #board .boardRow .wall {\n          background-color: #080808;\n          box-shadow: inset 0.25px 0.25px 0.25px 0px #080808; }\n        #app #stateHolder #board .boardRow .icons {\n          padding: none;\n          margin: none;\n          height: 100%;\n          width: 100%; }\n", ""]);
+	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100%;\n  width: 100%;\n  margin: none; }\n  #app #stateHolder {\n    padding: none;\n    margin: none;\n    width: 100%;\n    height: 100%;\n    background-color: #080808; }\n    #app #stateHolder #controls {\n      padding: 2%;\n      padding-bottom: 0;\n      color: #cccccc;\n      background-color: #080808;\n      border: solid #080808 1px;\n      height: 25%;\n      width: 100%;\n      position: fixed;\n      top: 0; }\n      #app #stateHolder #controls .control-row, #app #stateHolder #controls #topRow, #app #stateHolder #controls #secondRow, #app #stateHolder #controls #thirdRow, #app #stateHolder #controls #bottomRow {\n        padding: none;\n        margin: none;\n        height: inherit; }\n        #app #stateHolder #controls .control-row .roundIconBorder, #app #stateHolder #controls #topRow .roundIconBorder, #app #stateHolder #controls #secondRow .roundIconBorder, #app #stateHolder #controls #thirdRow .roundIconBorder, #app #stateHolder #controls #bottomRow .roundIconBorder {\n          border: solid #080808 1px;\n          border-radius: 100%;\n          background-color: #cccccc; }\n        #app #stateHolder #controls .control-row .itemSelect .itemBtns, #app #stateHolder #controls #topRow .itemSelect .itemBtns, #app #stateHolder #controls #secondRow .itemSelect .itemBtns, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns {\n          margin: none;\n          padding: none;\n          height: inherit;\n          width: inherit;\n          background-color: #080808; }\n          #app #stateHolder #controls .control-row .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #topRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #secondRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns .control-icons {\n            height: 50px;\n            width: 50px;\n            margin: none;\n            padding: none; }\n        #app #stateHolder #controls .control-row .control-icons, #app #stateHolder #controls #topRow .control-icons, #app #stateHolder #controls #secondRow .control-icons, #app #stateHolder #controls #thirdRow .control-icons, #app #stateHolder #controls #bottomRow .control-icons {\n          height: 50px;\n          width: 50px; }\n        #app #stateHolder #controls .control-row .text, #app #stateHolder #controls #topRow .text, #app #stateHolder #controls #secondRow .text, #app #stateHolder #controls #thirdRow .text, #app #stateHolder #controls #bottomRow .text {\n          font-size: 150%;\n          color: #cccccc;\n          font-weight: bold; }\n          #app #stateHolder #controls .control-row .text #ek, #app #stateHolder #controls #topRow .text #ek, #app #stateHolder #controls #secondRow .text #ek, #app #stateHolder #controls #thirdRow .text #ek, #app #stateHolder #controls #bottomRow .text #ek {\n            font-size: 150%;\n            color: #99001A; }\n      #app #stateHolder #controls #topRow {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #secondRow {\n        position: absolute;\n        top: 25%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #thirdRow {\n        height: 25%;\n        position: absolute;\n        top: 50%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #bottomRow {\n        position: absolute;\n        bottom: 0;\n        left: 0;\n        right: 0; }\n    #app #stateHolder #board {\n      margin: none;\n      padding: none;\n      width: 90vw;\n      height: 90vw;\n      margin-top: 14%;\n      margin-right: 5vw;\n      margin-left: 5vw;\n      box-shadow: inset 0.75px 0.75px 0.75px 0px #cccccc; }\n      #app #stateHolder #board .boardRow {\n        width: 100%;\n        height: 1%; }\n        #app #stateHolder #board .boardRow .boardBlock {\n          margin: none;\n          padding: none;\n          height: 100%;\n          width: 1%;\n          font-size: 5px;\n          float: left;\n          background-color: #999999; }\n        #app #stateHolder #board .boardRow .activeBlock {\n          background-color: #999999; }\n        #app #stateHolder #board .boardRow .gas {\n          background-color: #53CC1F; }\n        #app #stateHolder #board .boardRow .dark {\n          background-color: #080808; }\n        #app #stateHolder #board .boardRow .inDark {\n          background-color: #080808;\n          color: #1f1f1f;\n          opacity: .1; }\n        #app #stateHolder #board .boardRow .wall {\n          background-color: #080808;\n          box-shadow: inset 0.25px 0.25px 0.25px 0px #080808; }\n        #app #stateHolder #board .boardRow .icons {\n          padding: none;\n          margin: none;\n          height: 100%;\n          width: 100%; }\n    #app #stateHolder #greeting {\n      background-color: #080808; }\n      #app #stateHolder #greeting #playBtn {\n        background-color: #53CC1F;\n        color: #cccccc; }\n", ""]);
 
 	// exports
 
@@ -10229,7 +10229,7 @@
 /* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fd88d9310306892adb0ac296d8c5cd3f.png";
+	module.exports = __webpack_require__.p + "1795e89d91ee718bebecfc2bee88cc9b.png";
 
 /***/ },
 /* 136 */
@@ -10247,7 +10247,7 @@
 /* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "8945d43995f92edcba7fd4b42ee60297.png";
+	module.exports = __webpack_require__.p + "1fca07933687a99b6c7aa68b777a8433.png";
 
 /***/ },
 /* 139 */
@@ -14685,10 +14685,32 @@
 					_react2.default.createElement(
 						_Row2.default,
 						{ id: 'topRow' },
-						_react2.default.createElement(_Col2.default, { xs: 3, className: 'text-center' }),
 						_react2.default.createElement(
 							_Col2.default,
-							{ xs: 6, className: 'text-center' },
+							{ xs: 12, className: 'text-center' },
+							_react2.default.createElement(
+								'span',
+								{ className: 'text' },
+								_react2.default.createElement(
+									'span',
+									{ className: 'control-icons', id: 'ek' },
+									this.props.enemiesKilled
+								),
+								' ',
+								_react2.default.createElement(
+									'span',
+									{ id: 'align-text' },
+									'enemies killed'
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						_Row2.default,
+						{ id: 'secondRow' },
+						_react2.default.createElement(
+							_Col2.default,
+							{ xs: 12, className: 'text-center' },
 							_react2.default.createElement(
 								_ButtonGroup2.default,
 								{ className: 'itemSelect' },
@@ -14759,33 +14781,8 @@
 									)
 								)
 							)
-						),
-						_react2.default.createElement(_Col2.default, { xs: 3 })
-					),
-					_react2.default.createElement(
-						_Row2.default,
-						{ id: 'secondRow' },
-						_react2.default.createElement(
-							_Col2.default,
-							{ xs: 12, className: 'text-center' },
-							_react2.default.createElement(
-								'span',
-								{ className: 'text' },
-								_react2.default.createElement(
-									'span',
-									{ className: 'control-icons', id: 'ek' },
-									this.props.enemiesKilled
-								),
-								' ',
-								_react2.default.createElement(
-									'span',
-									{ id: 'align-text' },
-									'enemies killed'
-								)
-							)
 						)
 					),
-					_react2.default.createElement(_Row2.default, { id: 'thirdRow' }),
 					_react2.default.createElement(
 						_Row2.default,
 						{ id: 'bottomRow' },
@@ -14947,7 +14944,24 @@
 					syringeTaken: false,
 					elixir: false
 				},
-				actionObject: undefined
+				actionObject: undefined,
+				unlockingSound: document.createElement('audio'),
+				failedUnlockSound: document.createElement('audio'),
+				pickupItemSound: document.createElement('audio'),
+				useFirstAidSound: document.createElement('audio'),
+				matchesSound: document.createElement('audio'),
+				lighterSound: document.createElement('audio'),
+				flashlightSound: document.createElement('audio'),
+				syringeSound: document.createElement('audio'),
+				gasSound: document.createElement('audio'),
+				gasMaskSound: document.createElement('audio'),
+				bodyArmorSound: document.createElement('audio'),
+				shieldSound: document.createElement('audio'),
+				dogSound: document.createElement('audio'),
+				pistolSound: document.createElement('audio'),
+				rifleSound: document.createElement('audio'),
+				knifeSound: document.createElement('audio'),
+				axSound: document.createElement('audio')
 			};
 			return _this;
 		}
@@ -15366,7 +15380,7 @@
 				this.state.playerStats.flashlight = 0;
 				this.state.playerStats.firstAid = 0;
 				this.state.playerStats.syringe = 0;
-				this.state.playerStats.keys = 0;
+				this.state.playerStats.keys = 2;
 				this.state.playerStats.bossKey = false;
 				this.state.playerStats.bodyArmor = 'unequipped';
 				this.state.playerStats.bodyArmorIcon = undefined;
@@ -15382,12 +15396,63 @@
 				this.state.playerStats.elixir = false;
 				this.state.actionObject = undefined;
 				this.state.level = levelOne;
+				this.state.unlockingSound.src = 'https://www.dropbox.com/s/7ctz7pf9saniw2z/43707__digifishmusic__unlocking-security-door.wav?raw=1';
+				this.state.unlockingSound.preload = 'auto';
+				this.state.failedUnlockSound.src = 'https://www.dropbox.com/s/ccu26f00s3sy7hz/202099__spookymodem__jiggle-key.wav?raw=1';
+				this.state.failedUnlockSound.preload = 'auto';
+				this.state.pickupItemSound.src = 'https://www.dropbox.com/s/88o7ko9c8bizu8j/216629__wiesenwiesel__picking-up-small-box-with-items-inside.wav?raw=1';
+				this.state.pickupItemSound.preload = 'auto';
+				this.state.useFirstAidSound.src = 'https://www.dropbox.com/s/zazfr98hun7cl2p/207794__supersnd__opening-metal-box.wav?raw=1';
+				this.state.useFirstAidSound.preload = 'auto';
+				this.state.matchesSound.src = 'https://www.dropbox.com/s/xyfwvri5lrc1afz/326463__miekyj__lighting-a-match-owi.wav?raw=1';
+				this.state.matchesSound.preload = 'auto';
+				this.state.lighterSound.src = 'https://www.dropbox.com/s/t4ra85r5s6aoz8v/29949__unclesigmund__zippo-lighter.wav?raw=1';
+				this.state.lighterSound.preload = 'auto';
+				this.state.flashlightSound.src = 'https://www.dropbox.com/s/ttvgzv9ocvfnw6u/324334__gosfx__light-switch.mp3?raw=1';
+				this.state.flashlightSound.preload = 'auto';
+				this.state.syringeSound.src = 'https://www.dropbox.com/s/n490wa12gwtm09f/269423__beautifuldaymonster1968__asthma-inhaler.wav?raw=1';
+				this.state.syringeSound.preload = 'auto';
+				this.state.gasSound.src = 'https://www.dropbox.com/s/7i6htb37adz0huh/233405__templeofhades__gas-leak.wav?raw=1';
+				this.state.gasSound.preload = 'auto';
+				this.state.gasMaskSound.src = 'https://www.dropbox.com/s/uqga5m8ojxpqbak/49729__lysander-darkstar__gasmask.wav?raw=1';
+				this.state.gasMaskSound.preload = 'auto';
+				this.state.bodyArmorSound.src = 'https://www.dropbox.com/s/xey4cj76qevvq8n/51176__rutgermuller__zipper-unzip-3-slowly.wav?raw=1';
+				this.state.bodyArmorSound.preload = 'auto';
+				this.state.shieldSound.src = 'https://www.dropbox.com/s/dzgo4btchgxkzdx/327555__damianminnie__moving-object-heavy-object-moved-accros-surface.wav?raw=1';
+				this.state.shieldSound.preload = 'auto';
+				this.state.dogSound.src = 'https://www.dropbox.com/s/kanu9blhysk79g3/260777__jaylew1987__angry-dog-bark-snarl-with-reverb.wav?raw=1';
+				this.state.dogSound.preload = 'auto';
+				this.state.pistolSound.src = 'https://www.dropbox.com/s/8we0dpffcvgiabs/164930__shawnyboy__pistol-gun-cock.mp3?raw=1';
+				this.state.pistolSound.preload = 'auto';
+				this.state.rifleSound.src = 'https://www.dropbox.com/s/02voi5452x6zs83/17130__noisecollector__ak47-chamber-round.wav?raw=1';
+				this.state.rifleSound.preload = 'auto';
+				this.state.axSound.src = 'https://www.dropbox.com/s/fefypg5d32vuzot/59813__runey__security-clip.wav?raw=1';
+				this.state.axSound.preload = 'auto';
+				this.state.knifeSound.src = 'https://www.dropbox.com/s/ifhtdz2c7p7gatp/178415__motion-s__knife-sheath.wav?raw=1';
+				this.state.knifeSound.preload = 'auto';
 				this.setState({
 					activeRow: this.state.activeRow,
 					activeCol: this.state.activeCol,
 					level: this.state.level,
 					playerStats: this.state.playerStats,
-					actionObject: this.state.actionObject
+					actionObject: this.state.actionObject,
+					unlockingSound: this.state.unlockingSound,
+					failedUnlockSound: this.state.failedUnlockSound,
+					pickupItemSound: this.state.pickupItemSound,
+					useFirstAidSound: this.state.useFirstAidSound,
+					matchesSound: this.state.matchesSound,
+					lighterSound: this.state.lighterSound,
+					flashlightSound: this.state.flashlightSound,
+					syringeSound: this.state.syringeSound,
+					gasSound: this.state.gasSound,
+					gasMaskSound: this.state.gasMaskSound,
+					bodyArmorSound: this.state.bodyArmorSound,
+					shieldSound: this.state.shieldSound,
+					dogSound: this.state.dogSound,
+					pistolSound: this.state.pistolSound,
+					rifleSound: this.state.rifleSound,
+					axSound: this.state.axSound,
+					knifeSound: this.state.knifeSound
 				});
 			}
 
@@ -15479,6 +15544,7 @@
 								playerStats: this.state.playerStats
 							});
 							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								this.state.gasSound.play();
 								alert("Watch out, you're breathing in gas!");
 							}
 						}
@@ -15552,6 +15618,7 @@
 								playerStats: this.state.playerStats
 							});
 							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								this.state.gasSound.play();
 								alert("Watch out, you're breathing in gas!");
 							}
 						}
@@ -15626,6 +15693,7 @@
 								playerStats: this.state.playerStats
 							});
 							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								this.state.gasSound.play();
 								alert("Watch out, you're breathing in gas!");
 							}
 						}
@@ -15700,6 +15768,7 @@
 								playerStats: this.state.playerStats
 							});
 							if (this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+								this.state.gasSound.play();
 								alert("Watch out, you're breathing in gas!");
 							}
 						}
@@ -15727,22 +15796,28 @@
 					alert("You picked up a bonus health elixir!");
 				}
 				if (this.state.actionObject === 'matches') {
+					this.state.pickupItemSound.play();
 					this.state.playerStats.matches += 4;
 				}
 				if (this.state.actionObject === 'lighter') {
+					this.state.pickupItemSound.play();
 					this.state.playerStats.lighters += 1;
 				}
 				if (this.state.actionObject === 'flashLight') {
+					this.state.pickupItemSound.play();
 					this.state.playerStats.flashlight += 1;
 				}
 				if (this.state.actionObject === 'key' || this.state.actionObject === 'bossKey') {
+					this.state.pickupItemSound.play();
 					this.state.playerStats.keys += 1;
 					this.state.playerStats.bossKey = true;
 				}
 				if (this.state.actionObject === 'firstAid') {
+					this.state.pickupItemSound.play();
 					this.state.playerStats.firstAid += 1;
 				}
 				if (this.state.actionObject === 'syringe') {
+					this.state.pickupItemSound.play();
 					this.state.playerStats.syringe += 1;
 				}
 				this.state.level[this.state.activeRow][this.state.activeCol].content = 'r';
@@ -15757,6 +15832,7 @@
 			key: 'useMatch',
 			value: function useMatch(e) {
 				if (this.state.playerStats.matches > 0) {
+					this.state.matchesSound.play();
 					var min;
 					var Min;
 					var max;
@@ -15799,6 +15875,7 @@
 			key: 'useLighter',
 			value: function useLighter(e) {
 				if (this.state.playerStats.lighters > 0) {
+					this.state.lighterSound.play();
 					var fullOrEmpty = Math.floor(Math.random(5 - 1) * 5) + 1;
 
 					if (fullOrEmpty > 1) {
@@ -15854,6 +15931,7 @@
 				if (this.state.playerStats.flashlight > 0) {
 					var deadOrNot = Math.floor(Math.random(10 - 1) * 10) + 1;
 					if (deadOrNot > 1) {
+						this.state.flashlightSound.play();
 						var min;
 						var Min;
 						var max;
@@ -15904,6 +15982,7 @@
 			key: 'useFirstAid',
 			value: function useFirstAid(e) {
 				if (this.state.playerStats.firstAid > 0) {
+					this.state.useFirstAidSound.play();
 					this.state.playerStats.health += 15;
 					this.state.playerStats.firstAid -= 1;
 					if (this.state.playerStats.health > 100) {
@@ -15921,6 +16000,7 @@
 			value: function useSyringe(e) {
 				if (this.state.playerStats.syringe > 0) {
 					if (this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
+						this.state.syringeSound.play();
 						this.state.playerStats.syringe -= 1;
 						this.state.playerStats.syringeTaken = true;
 						this.setState({
@@ -15937,22 +16017,27 @@
 		}, {
 			key: 'useKey',
 			value: function useKey(e) {
+
 				if (this.state.actionObject !== 'lockedDoor') {
 					alert('You use this key to unlock a locked door!');
 				} else {
 					if (this.state.playerStats.bossKey === true) {
+						this.state.unlockingSound.play();
 						this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
 						alert('Congratulations, you escaped the dungeon!');
 					} else {
 						if (this.state.playerStats.keys > 1) {
+							this.state.unlockingSound.play();
 							this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
 							this.setState({ level: this.state.level });
 						} else {
 							var lockOrUnlock = Math.floor(Math.random() * (1 - 0 + 1) + 0);
 							if (this.state.playerStats.bossKey === true) {
+								this.state.unlockingSound.play();
 								this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
 							} else {
 								if (lockOrUnlock === 1) {
+									this.state.unlockingSound.play();
 									this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
 									this.setState({ level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content });
 									alert("Success!");
@@ -15979,18 +16064,21 @@
 
 				if (this.state.actionObject === 'bodyArmor') {
 					if (this.state.playerStats.bodyArmor === 'unequipped') {
+						this.state.bodyArmorSound.play();
 						this.state.playerStats.bodyArmor = 'equipped';
 						this.setState({ playerStats: this.state.playerStats });
 					}
 				}
 				if (this.state.actionObject === 'shield') {
 					if (this.state.playerStats.shield === 'unequipped') {
+						this.state.shieldSound.play();
 						this.state.playerStats.shield = 'equipped';
 						this.setState({ playerStats: this.state.playerStats });
 					}
 				}
 				if (this.state.actionObject === 'gasMask') {
 					if (this.state.playerStats.gasMask === 'unequipped') {
+						this.state.gasMaskSound.play();
 						this.state.playerStats.gasMask = 'equipped';
 						this.setState({ playerStats: this.state.playerStats });
 					}
@@ -16000,6 +16088,7 @@
 				if (this.state.actionObject === 'rifle') {
 					if (this.state.playerStats.weapon !== 'rifle') {
 						this.state.playerStats.weapon = 'rifle';
+						this.state.rifleSound.play();
 						this.state.playerStats.weaponIcon = __webpack_require__(144);
 						this.setState({ playerStats: this.state.playerStats });
 					}
@@ -16007,6 +16096,7 @@
 				if (this.state.actionObject === 'pistol') {
 					if (this.state.playerStats.weapon !== 'rifle' && this.state.playerStats.weapon !== 'pistol') {
 						this.state.playerStats.weapon = 'pistol';
+						this.state.pistolSound.play();
 						this.state.playerStats.weaponIcon = __webpack_require__(143);
 						this.setState({ playerStats: this.state.playerStats });
 					}
@@ -16014,6 +16104,7 @@
 				if (this.state.actionObject === 'ax') {
 					if (this.state.playerStats.weapon !== 'rifle' && this.state.playerStats.weapon !== 'pistol' && this.state.playerStats.weapon !== 'ax') {
 						this.state.playerStats.weapon = 'ax';
+						this.state.axSound.play();
 						this.state.playerStats.weaponIcon = __webpack_require__(137);
 						this.setState({ playerStats: this.state.playerStats });
 					}
@@ -16021,6 +16112,7 @@
 				if (this.state.actionObject === 'knife') {
 					if (this.state.playerStats.weapon !== 'rifle' && this.state.playerStats.weapon !== 'pistol' && this.state.playerStats.weapon !== 'ax' && this.state.playerStats.weapon !== 'knife') {
 						this.state.playerStats.weapon = 'knife';
+						this.state.knifeSound.play();
 						this.state.playerStats.weaponIcon = __webpack_require__(140);
 						this.setState({ playerStats: this.state.playerStats });
 					}
@@ -16227,6 +16319,29 @@
 					alert('Sorry, you died!');
 				}
 			}
+		}, {
+			key: 'componentWillMount',
+			value: function componentWillMount(e) {
+				this.state.unlockingSound.load();
+				this.state.failedUnlockSound.load();
+				this.state.pickupItemSound.load();
+				this.state.useFirstAidSound.load();
+				this.state.syringeSound.load();
+				this.state.matchesSound.load();
+				this.state.lighterSound.load();
+				this.state.axSound.load();
+				this.state.pistolSound.load();
+				this.state.rifleSound.load();
+				this.state.knifeSound.load();
+				this.state.dogSound.load();
+				this.state.flashlightSound.load();
+				this.state.gasSound.load();
+				this.state.gasMaskSound.load();
+				this.state.bodyArmorSound.load();
+				this.state.shieldSound.load();
+			}
+			// Game sound effects ---------------------------------
+
 		}, {
 			key: 'componentDidUpdate',
 			value: function componentDidUpdate(e) {
@@ -17257,7 +17372,7 @@
 	      null,
 	      _react2.default.createElement(
 	        _Modal2.default,
-	        { show: this.state.showModal, onHide: this.close },
+	        { id: 'greeting', show: this.state.showModal, onHide: this.close },
 	        _react2.default.createElement(
 	          _Modal2.default.Header,
 	          { closeButton: true },
@@ -17270,11 +17385,6 @@
 	        _react2.default.createElement(
 	          _Modal2.default.Body,
 	          null,
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Navigate and escape the dungeon'
-	          ),
 	          _react2.default.createElement(
 	            'p',
 	            null,
@@ -17291,7 +17401,7 @@
 	          { onClick: this.close },
 	          _react2.default.createElement(
 	            _Button2.default,
-	            { onClick: this.props.play },
+	            { id: 'playBtn', onClick: this.props.play },
 	            'Play Now'
 	          )
 	        )

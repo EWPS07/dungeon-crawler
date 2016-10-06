@@ -23,19 +23,18 @@ const Greeting = React.createClass({
 
     return (
       <div>
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal id='greeting'show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>Welcome to the dungeon</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Navigate and escape the dungeon</h4>
            <p>
            	Use the arrow keys to navigate, and the spacebar to interact with items and enemies
            </p>
            <h4>Beware, there is poison gas in the dungeon!</h4>
           </Modal.Body>
           <Modal.Footer onClick={this.close}>
-            <Button onClick={this.props.play}>Play Now</Button>
+            <Button id='playBtn'onClick={this.props.play}>Play Now</Button>
           </Modal.Footer>
         </Modal>
       </div>

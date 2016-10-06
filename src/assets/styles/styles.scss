@@ -33,10 +33,6 @@ $red: #99001A;
 				padding: none;
 				margin: none;
 				height: inherit;
-				#playBtn {
-					background-color: $gasGreen;
-					color: $lightest;
-				}
 				.roundIconBorder {
 					border: solid $darkest 1px;
 					border-radius: 100%;
@@ -48,7 +44,7 @@ $red: #99001A;
 						padding: none;
 						height: inherit;
 						width: inherit;
-						background-color: $gasGreen;
+						background-color: $darkest;
 						.control-icons {
 							height: 50px;
 							width: 50px;
@@ -110,7 +106,7 @@ $red: #99001A;
 			margin-top: 14%;
 			margin-right: 5vw;
 			margin-left: 5vw;
-			box-shadow: inset .5px .5px .5px .5px 0px $darkest;
+			box-shadow: inset .75px .75px .75px 0px $lightest;
 			.boardRow {
 				width: 100%;
 				height: 1%;
@@ -121,10 +117,10 @@ $red: #99001A;
 					width: 1%;
 					font-size: 5px;
 					float: left;
-					background-color: $lightest;
+					background-color: $nextLightest;
 				}
 				.activeBlock {
-					background-color: $lightest;
+					background-color: $nextLightest;
 				}
 				.gas {
 					background-color: $gasGreen;
@@ -148,6 +144,13 @@ $red: #99001A;
 					height: 100%;
 					width: 100%;
 				}
+			}
+		}
+		#greeting {
+			background-color: $darkest;
+			#playBtn {
+				background-color: $gasGreen;
+				color: $lightest;
 			}
 		}
 	}

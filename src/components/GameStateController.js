@@ -41,7 +41,24 @@ class GameStateController extends React.Component {
 				syringeTaken: false,
 				elixir: false
 			},
-			actionObject: undefined
+			actionObject: undefined,
+			unlockingSound: document.createElement('audio'),
+			failedUnlockSound: document.createElement('audio'),
+			pickupItemSound: document.createElement('audio'),
+			useFirstAidSound: document.createElement('audio'),
+			matchesSound: document.createElement('audio'),
+			lighterSound: document.createElement('audio'),
+			flashlightSound: document.createElement('audio'),
+			syringeSound: document.createElement('audio'),
+			gasSound: document.createElement('audio'),
+			gasMaskSound: document.createElement('audio'),
+			bodyArmorSound: document.createElement('audio'),
+			shieldSound: document.createElement('audio'),
+			dogSound: document.createElement('audio'),
+			pistolSound: document.createElement('audio'),
+			rifleSound: document.createElement('audio'),
+			knifeSound: document.createElement('audio'),
+			axSound: document.createElement('audio')
 		}
 	}
 
@@ -534,7 +551,7 @@ class GameStateController extends React.Component {
 		this.state.playerStats.flashlight= 0
 		this.state.playerStats.firstAid= 0
 		this.state.playerStats.syringe= 0
-		this.state.playerStats.keys= 0
+		this.state.playerStats.keys= 2
 		this.state.playerStats.bossKey= false
 		this.state.playerStats.bodyArmor= 'unequipped'
 		this.state.playerStats.bodyArmorIcon= undefined
@@ -550,12 +567,63 @@ class GameStateController extends React.Component {
 		this.state.playerStats.elixir = false
 		this.state.actionObject= undefined
 		this.state.level = levelOne
+		this.state.unlockingSound.src = 'https://www.dropbox.com/s/7ctz7pf9saniw2z/43707__digifishmusic__unlocking-security-door.wav?raw=1'
+		this.state.unlockingSound.preload='auto'
+		this.state.failedUnlockSound.src = 'https://www.dropbox.com/s/ccu26f00s3sy7hz/202099__spookymodem__jiggle-key.wav?raw=1'
+		this.state.failedUnlockSound.preload='auto'
+		this.state.pickupItemSound.src='https://www.dropbox.com/s/88o7ko9c8bizu8j/216629__wiesenwiesel__picking-up-small-box-with-items-inside.wav?raw=1'
+		this.state.pickupItemSound.preload='auto'
+		this.state.useFirstAidSound.src='https://www.dropbox.com/s/zazfr98hun7cl2p/207794__supersnd__opening-metal-box.wav?raw=1'
+		this.state.useFirstAidSound.preload='auto'
+		this.state.matchesSound.src='https://www.dropbox.com/s/xyfwvri5lrc1afz/326463__miekyj__lighting-a-match-owi.wav?raw=1'
+		this.state.matchesSound.preload='auto'
+		this.state.lighterSound.src='https://www.dropbox.com/s/t4ra85r5s6aoz8v/29949__unclesigmund__zippo-lighter.wav?raw=1'
+		this.state.lighterSound.preload='auto'
+		this.state.flashlightSound.src='https://www.dropbox.com/s/ttvgzv9ocvfnw6u/324334__gosfx__light-switch.mp3?raw=1'
+		this.state.flashlightSound.preload='auto'
+		this.state.syringeSound.src='https://www.dropbox.com/s/n490wa12gwtm09f/269423__beautifuldaymonster1968__asthma-inhaler.wav?raw=1'
+		this.state.syringeSound.preload='auto'
+		this.state.gasSound.src='https://www.dropbox.com/s/7i6htb37adz0huh/233405__templeofhades__gas-leak.wav?raw=1'
+		this.state.gasSound.preload='auto'
+		this.state.gasMaskSound.src='https://www.dropbox.com/s/uqga5m8ojxpqbak/49729__lysander-darkstar__gasmask.wav?raw=1'
+		this.state.gasMaskSound.preload='auto'
+		this.state.bodyArmorSound.src='https://www.dropbox.com/s/xey4cj76qevvq8n/51176__rutgermuller__zipper-unzip-3-slowly.wav?raw=1'
+		this.state.bodyArmorSound.preload='auto'
+		this.state.shieldSound.src='https://www.dropbox.com/s/dzgo4btchgxkzdx/327555__damianminnie__moving-object-heavy-object-moved-accros-surface.wav?raw=1'
+		this.state.shieldSound.preload='auto'
+		this.state.dogSound.src='https://www.dropbox.com/s/kanu9blhysk79g3/260777__jaylew1987__angry-dog-bark-snarl-with-reverb.wav?raw=1'
+		this.state.dogSound.preload='auto'
+		this.state.pistolSound.src='https://www.dropbox.com/s/8we0dpffcvgiabs/164930__shawnyboy__pistol-gun-cock.mp3?raw=1'
+		this.state.pistolSound.preload='auto'
+		this.state.rifleSound.src='https://www.dropbox.com/s/02voi5452x6zs83/17130__noisecollector__ak47-chamber-round.wav?raw=1'
+		this.state.rifleSound.preload='auto'
+		this.state.axSound.src='https://www.dropbox.com/s/fefypg5d32vuzot/59813__runey__security-clip.wav?raw=1'
+		this.state.axSound.preload='auto'
+		this.state.knifeSound.src='https://www.dropbox.com/s/ifhtdz2c7p7gatp/178415__motion-s__knife-sheath.wav?raw=1'
+		this.state.knifeSound.preload='auto'
 		this.setState({
 			activeRow: this.state.activeRow,
 			activeCol: this.state.activeCol,
 			level: this.state.level,
 			playerStats: this.state.playerStats,
-			actionObject: this.state.actionObject
+			actionObject: this.state.actionObject,
+			unlockingSound: this.state.unlockingSound,
+			failedUnlockSound: this.state.failedUnlockSound,
+			pickupItemSound: this.state.pickupItemSound,
+			useFirstAidSound: this.state.useFirstAidSound,
+			matchesSound: this.state.matchesSound,
+			lighterSound: this.state.lighterSound,
+			flashlightSound: this.state.flashlightSound,
+			syringeSound: this.state.syringeSound,
+			gasSound: this.state.gasSound,
+			gasMaskSound: this.state.gasMaskSound,
+			bodyArmorSound: this.state.bodyArmorSound,
+			shieldSound: this.state.shieldSound,
+			dogSound: this.state.dogSound,
+			pistolSound: this.state.pistolSound,
+			rifleSound: this.state.rifleSound,
+			axSound: this.state.axSound,
+			knifeSound: this.state.knifeSound
 		})
 	}
 
@@ -648,6 +716,7 @@ class GameStateController extends React.Component {
 						playerStats: this.state.playerStats
 					})
 					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						this.state.gasSound.play()
 						alert("Watch out, you're breathing in gas!")
 					}
 				}
@@ -723,6 +792,7 @@ class GameStateController extends React.Component {
 						playerStats: this.state.playerStats
 					})
 					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						this.state.gasSound.play()
 						alert("Watch out, you're breathing in gas!")
 					}
 				}
@@ -799,6 +869,7 @@ class GameStateController extends React.Component {
 						playerStats: this.state.playerStats
 					})
 					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						this.state.gasSound.play()
 						alert("Watch out, you're breathing in gas!")
 					}
 				}
@@ -875,6 +946,7 @@ class GameStateController extends React.Component {
 						playerStats: this.state.playerStats
 					})
 					if(this.state.level[this.state.previousPosition[0]][this.state.previousPosition[1]].gas === false) {
+						this.state.gasSound.play()
 						alert("Watch out, you're breathing in gas!")
 					}
 				}
@@ -900,22 +972,28 @@ class GameStateController extends React.Component {
 			alert("You picked up a bonus health elixir!")
 		}
 		if(this.state.actionObject === 'matches') {
+			this.state.pickupItemSound.play()
 			this.state.playerStats.matches+=4
 		}
 		if(this.state.actionObject === 'lighter') {
+			this.state.pickupItemSound.play()
 			this.state.playerStats.lighters+=1
 		}
 		if(this.state.actionObject === 'flashLight') {
+			this.state.pickupItemSound.play()
 			this.state.playerStats.flashlight+=1
 		}
 		if(this.state.actionObject === 'key' || this.state.actionObject === 'bossKey') {
+			this.state.pickupItemSound.play()
 			this.state.playerStats.keys+=1
 			this.state.playerStats.bossKey = true
 		}
 		if(this.state.actionObject === 'firstAid') {
+			this.state.pickupItemSound.play()
 			this.state.playerStats.firstAid+=1
 		}
 		if(this.state.actionObject === 'syringe') {
+			this.state.pickupItemSound.play()
 			this.state.playerStats.syringe+=1
 		}
 		this.state.level[this.state.activeRow][this.state.activeCol].content = 'r'
@@ -927,6 +1005,7 @@ class GameStateController extends React.Component {
 	// light a match --------------------------------
 	useMatch(e) {
 		if(this.state.playerStats.matches >0) {
+			this.state.matchesSound.play()
 			var min
 			var Min
 			var max
@@ -970,6 +1049,7 @@ class GameStateController extends React.Component {
 	// use a lighter ----------------------------------
 	useLighter(e) {
 		if(this.state.playerStats.lighters>0) {
+			this.state.lighterSound.play()
 			var fullOrEmpty = Math.floor(Math.random(5-1)*5)+1
 
 			if(fullOrEmpty>1) {
@@ -1027,6 +1107,7 @@ class GameStateController extends React.Component {
 		if(this.state.playerStats.flashlight>0) {
 			var deadOrNot = Math.floor(Math.random(10-1)*10)+1
 			if(deadOrNot>1) {
+				this.state.flashlightSound.play()
 				var min
 				var Min
 				var max
@@ -1079,6 +1160,7 @@ class GameStateController extends React.Component {
 	// use a firstaid kit -------------------------
 	useFirstAid(e) {
 		if(this.state.playerStats.firstAid>0) {
+			this.state.useFirstAidSound.play()
 			this.state.playerStats.health+=15
 			this.state.playerStats.firstAid-=1
 			if(this.state.playerStats.health>100) {
@@ -1093,6 +1175,7 @@ class GameStateController extends React.Component {
 	useSyringe(e) {
 		if(this.state.playerStats.syringe>0) {
 			if(this.state.level[this.state.activeRow][this.state.activeCol].gas === true) {
+				this.state.syringeSound.play()
 				this.state.playerStats.syringe-=1
 				this.state.playerStats.syringeTaken = true
 				this.setState({
@@ -1108,26 +1191,31 @@ class GameStateController extends React.Component {
 	}
 	// use a key -----------------------------------
 	useKey(e) {
+		
 		if(this.state.actionObject !== 'lockedDoor') {
 			alert('You use this key to unlock a locked door!')
 		}
 		else {
 			if(this.state.playerStats.bossKey === true) {
+				this.state.unlockingSound.play()
 				this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
 				alert('Congratulations, you escaped the dungeon!')
 			}
 			else {
 				if(this.state.playerStats.keys > 1) {
+					this.state.unlockingSound.play()
 					this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
 					this.setState({level: this.state.level})
 				}
 				else {
 					let lockOrUnlock = Math.floor(Math.random()*((1)-0+1)+0)
 					if(this.state.playerStats.bossKey === true) {
+						this.state.unlockingSound.play()
 						this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
 					}
 					else {
 						if(lockOrUnlock === 1) {
+						this.state.unlockingSound.play()
 							this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
 							this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
 							alert("Success!")
@@ -1152,18 +1240,21 @@ class GameStateController extends React.Component {
 		
 		if(this.state.actionObject === 'bodyArmor') {
 			if(this.state.playerStats.bodyArmor === 'unequipped') {
+				this.state.bodyArmorSound.play()
 				this.state.playerStats.bodyArmor = 'equipped'
 				this.setState({playerStats: this.state.playerStats})
 			}
 		}
 		if(this.state.actionObject === 'shield') {
 			if(this.state.playerStats.shield === 'unequipped') {
+				this.state.shieldSound.play()
 				this.state.playerStats.shield = 'equipped'
 				this.setState({playerStats: this.state.playerStats})
 			}
 		}
 		if(this.state.actionObject === 'gasMask') {
 			if(this.state.playerStats.gasMask === 'unequipped') {
+				this.state.gasMaskSound.play()
 				this.state.playerStats.gasMask = 'equipped'
 				this.setState({playerStats: this.state.playerStats})
 			}
@@ -1173,6 +1264,7 @@ class GameStateController extends React.Component {
 		if(this.state.actionObject === 'rifle') {
 			if(this.state.playerStats.weapon !== 'rifle') {
 				this.state.playerStats.weapon = 'rifle'
+				this.state.rifleSound.play()
 				this.state.playerStats.weaponIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/rifle.png')
 				this.setState({playerStats: this.state.playerStats})
 			}
@@ -1181,6 +1273,7 @@ class GameStateController extends React.Component {
 			if(this.state.playerStats.weapon !== 'rifle' &&
 				this.state.playerStats.weapon !== 'pistol') {
 				this.state.playerStats.weapon = 'pistol'
+				this.state.pistolSound.play()
 				this.state.playerStats.weaponIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/pistol.png')
 				this.setState({playerStats: this.state.playerStats})
 			}
@@ -1190,6 +1283,7 @@ class GameStateController extends React.Component {
 				this.state.playerStats.weapon !== 'pistol' &&
 				this.state.playerStats.weapon !== 'ax') {
 				this.state.playerStats.weapon = 'ax'
+				this.state.axSound.play()
 				this.state.playerStats.weaponIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/glyphicons-314-ax@3x.png')
 				this.setState({playerStats: this.state.playerStats})
 			}
@@ -1200,6 +1294,7 @@ class GameStateController extends React.Component {
 				this.state.playerStats.weapon !== 'ax' &&
 				this.state.playerStats.weapon !== 'knife') {
 				this.state.playerStats.weapon = 'knife'
+				this.state.knifeSound.play()
 				this.state.playerStats.weaponIcon = require('../assets/icons/glyphicons_pro_1_9_2/glyphicons/png/knife.png')
 				this.setState({playerStats: this.state.playerStats})
 			}
@@ -1426,6 +1521,27 @@ class GameStateController extends React.Component {
 			
 		}
 	}
+	componentWillMount(e) {
+		this.state.unlockingSound.load()
+		this.state.failedUnlockSound.load()
+		this.state.pickupItemSound.load()
+		this.state.useFirstAidSound.load()
+		this.state.syringeSound.load()
+		this.state.matchesSound.load()
+		this.state.lighterSound.load()
+		this.state.axSound.load()
+		this.state.pistolSound.load()
+		this.state.rifleSound.load()
+		this.state.knifeSound.load()
+		this.state.dogSound.load()
+		this.state.flashlightSound.load()
+		this.state.gasSound.load()
+		this.state.gasMaskSound.load()
+		this.state.bodyArmorSound.load()
+		this.state.shieldSound.load()
+
+	}
+	// Game sound effects ---------------------------------
 	componentDidUpdate(e) {
 		this.healthNotification()
 	}
