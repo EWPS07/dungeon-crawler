@@ -627,8 +627,6 @@ class GameStateController extends React.Component {
 		})
 	}
 
-
-
 	// lock player to enemy ----------------------
 	forceFight(e) {
 		if(this.state.level[this.state.activeRow][this.state.activeCol].content == 'crazyInmate' ||
@@ -651,6 +649,8 @@ class GameStateController extends React.Component {
 		})
 	}
 
+
+	//*************************************************** PLAYER MOVEMENT **********************************************
 	// left arrow movement -----------------------
 	leftArrow(e) {
 		e.preventDefault()
@@ -958,7 +958,8 @@ class GameStateController extends React.Component {
 		this.illuminate()
 	}
 
-	// PLAYER INTERACTIONS -----------------------------------------------------------
+	//************************************************* PLAYER INTERACTIONS *********************************************
+	
 	// pick up items ---------------------------------
 	pickup() {
 		// // items -----------------------------
@@ -1001,7 +1002,8 @@ class GameStateController extends React.Component {
 		console.log(this.state.playerStats)
 	}
 
-	// use items --------------------------------------
+	// ITEM USAGE -----------------------------------
+
 	// light a match --------------------------------
 	useMatch(e) {
 		if(this.state.playerStats.matches >0) {
@@ -1049,6 +1051,7 @@ class GameStateController extends React.Component {
 			this.inventoryEmpty('matches')
 		}
 	}
+
 	// use a lighter ----------------------------------
 	useLighter(e) {
 		if(this.state.playerStats.lighters>0) {
@@ -1108,6 +1111,7 @@ class GameStateController extends React.Component {
 			this.inventoryEmpty('lighter')
 		}
 	}
+
 	// use a flashlight ---------------------------------
 	useFlashlight(e) {
 		if(this.state.playerStats.flashlight>0) {
@@ -1166,6 +1170,7 @@ class GameStateController extends React.Component {
 			this.inventoryEmpty('flashlight')
 		}
 	}
+
 	// use a firstaid kit -------------------------
 	useFirstAid(e) {
 		if(this.state.playerStats.firstAid>0) {
@@ -1183,6 +1188,7 @@ class GameStateController extends React.Component {
 			this.inventoryEmpty('firstAid kits')
 		}
 	}
+
 	// use a syringe -------------------------------
 	useSyringe(e) {
 		if(this.state.playerStats.syringe>0) {
@@ -1203,6 +1209,7 @@ class GameStateController extends React.Component {
 			this.inventoryEmpty('syringe')
 		}
 	}
+
 	// use a key -----------------------------------
 	useKey(e) {
 		if(this.state.playerStats.keys > 0) {
@@ -1250,7 +1257,7 @@ class GameStateController extends React.Component {
 		}
 	}
 
-	// equip protective items -------------------------
+	// EQUIP PROTECTIVE GEAR ------------------------------
 	equip() {
 
 		// equip armor, shield, and gasmask ----------
@@ -1496,7 +1503,7 @@ class GameStateController extends React.Component {
 		}
 	}
 
-	// illuminated area ----------------------------------
+	// ILLUMINATED AREA ----------------------------------------
 	illuminate(e) {
 		for(var i=0;i<this.state.level.length;i++) {
 			for(var I=0;I<this.state.level[i].length;I++) {

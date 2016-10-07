@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a65db7ac1ac9c2a8783e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a764f7cf0f935e38e49e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -15534,6 +15534,7 @@
 				});
 			}
 
+			//*************************************************** PLAYER MOVEMENT **********************************************
 			// left arrow movement -----------------------
 
 		}, {
@@ -15833,7 +15834,8 @@
 				this.illuminate();
 			}
 
-			// PLAYER INTERACTIONS -----------------------------------------------------------
+			//************************************************* PLAYER INTERACTIONS *********************************************
+
 			// pick up items ---------------------------------
 
 		}, {
@@ -15879,7 +15881,8 @@
 				console.log(this.state.playerStats);
 			}
 
-			// use items --------------------------------------
+			// ITEM USAGE -----------------------------------
+
 			// light a match --------------------------------
 
 		}, {
@@ -15925,6 +15928,7 @@
 					this.inventoryEmpty('matches');
 				}
 			}
+
 			// use a lighter ----------------------------------
 
 		}, {
@@ -15981,6 +15985,7 @@
 					this.inventoryEmpty('lighter');
 				}
 			}
+
 			// use a flashlight ---------------------------------
 
 		}, {
@@ -16036,6 +16041,7 @@
 					this.inventoryEmpty('flashlight');
 				}
 			}
+
 			// use a firstaid kit -------------------------
 
 		}, {
@@ -16055,6 +16061,7 @@
 					this.inventoryEmpty('firstAid kits');
 				}
 			}
+
 			// use a syringe -------------------------------
 
 		}, {
@@ -16075,6 +16082,7 @@
 					this.inventoryEmpty('syringe');
 				}
 			}
+
 			// use a key -----------------------------------
 
 		}, {
@@ -16119,7 +16127,7 @@
 				}
 			}
 
-			// equip protective items -------------------------
+			// EQUIP PROTECTIVE GEAR ------------------------------
 
 		}, {
 			key: 'equip',
@@ -16337,7 +16345,7 @@
 				}
 			}
 
-			// illuminated area ----------------------------------
+			// ILLUMINATED AREA ----------------------------------------
 
 		}, {
 			key: 'illuminate',
