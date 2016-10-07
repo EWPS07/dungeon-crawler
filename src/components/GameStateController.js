@@ -58,7 +58,7 @@ class GameStateController extends React.Component {
 			pistolSound: document.createElement('audio'),
 			rifleSound: document.createElement('audio'),
 			knifeSound: document.createElement('audio'),
-			axSound: document.createElement('audio')
+			axSound: document.createElement('audio'),
 		}
 	}
 
@@ -1045,6 +1045,9 @@ class GameStateController extends React.Component {
 				playerStats: this.state.playerStats
 			})
 		}
+		else {
+			this.inventoryEmpty('matches')
+		}
 	}
 	// use a lighter ----------------------------------
 	useLighter(e) {
@@ -1101,6 +1104,9 @@ class GameStateController extends React.Component {
 				alert("Sorry, your lighter ran out of fluid!")
 			}
 		}
+		else {
+			this.inventoryEmpty('lighter')
+		}
 	}
 	// use a flashlight ---------------------------------
 	useFlashlight(e) {
@@ -1156,6 +1162,9 @@ class GameStateController extends React.Component {
 				alert("Sorry, your batteries are dead!")
 			}
 		}
+		else {
+			this.inventoryEmpty('flashlight')
+		}
 	}
 	// use a firstaid kit -------------------------
 	useFirstAid(e) {
@@ -1169,6 +1178,9 @@ class GameStateController extends React.Component {
 			this.setState({
 				playerStats: this.state.playerStats
 			})
+		}
+		else {
+			this.inventoryEmpty('firstAid kits')
 		}
 	}
 	// use a syringe -------------------------------
@@ -1187,48 +1199,54 @@ class GameStateController extends React.Component {
 			}
 		
 		}
-		console.log('using syringe')
+		else {
+			this.inventoryEmpty('syringe')
+		}
 	}
 	// use a key -----------------------------------
 	useKey(e) {
-		
-		if(this.state.actionObject !== 'lockedDoor') {
-			alert('You use this key to unlock a locked door!')
-		}
-		else {
-			if(this.state.playerStats.bossKey === true) {
-				this.state.unlockingSound.play()
-				this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-				alert('Congratulations, you escaped the dungeon!')
+		if(this.state.playerStats.keys > 0) {
+			if(this.state.actionObject !== 'lockedDoor') {
+				alert('You use this key to unlock a locked door!')
 			}
 			else {
-				if(this.state.playerStats.keys > 1) {
+				if(this.state.playerStats.bossKey === true) {
 					this.state.unlockingSound.play()
 					this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-					this.setState({level: this.state.level})
+					alert('Congratulations, you escaped the dungeon!')
 				}
 				else {
-					let lockOrUnlock = Math.floor(Math.random()*((1)-0+1)+0)
-					if(this.state.playerStats.bossKey === true) {
+					if(this.state.playerStats.keys > 1) {
 						this.state.unlockingSound.play()
 						this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
+						this.setState({level: this.state.level})
 					}
 					else {
-						if(lockOrUnlock === 1) {
-						this.state.unlockingSound.play()
+						let lockOrUnlock = Math.floor(Math.random()*((1)-0+1)+0)
+						if(this.state.playerStats.bossKey === true) {
+							this.state.unlockingSound.play()
 							this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
-							this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
-							alert("Success!")
 						}
 						else {
-							this.setState({
-								level: this.state.level
-							})
-							alert("Sorry, you didn't get the door open")
+							if(lockOrUnlock === 1) {
+							this.state.unlockingSound.play()
+								this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor'
+								this.setState({level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content})
+								alert("Success!")
+							}
+							else {
+								this.setState({
+									level: this.state.level
+								})
+								alert("Sorry, you didn't get the door open")
+							}
 						}
 					}
 				}
 			}
+		}
+		else {
+			this.inventoryEmpty('keys')
 		}
 	}
 
@@ -1521,6 +1539,14 @@ class GameStateController extends React.Component {
 			
 		}
 	}
+	inventoryEmpty(itemToUse) {
+		if(itemToUse[itemToUse.length-1] !== 's') {
+			alert("Sorry, you haven't picked up any " + itemToUse +"s" + " yet!")
+		}
+		else {
+			alert("Sorry, you haven't picked up any " + itemToUse + " yet!")
+		}
+	}
 	componentWillMount(e) {
 		this.state.unlockingSound.load()
 		this.state.failedUnlockSound.load()
@@ -1583,7 +1609,6 @@ class GameStateController extends React.Component {
 					useMatch={this.useMatch.bind(this)}
 					useLighter={this.useLighter.bind(this)}
 					useFlashlight={this.useFlashlight.bind(this)}
-					focusedItemEnemy={this.state.actionObject}
 				/>
 			</div>
 		)

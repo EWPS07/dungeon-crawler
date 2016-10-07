@@ -28,18 +28,54 @@ class Controls extends React.Component {
 			<div id='controls'>
 				<Row id='topRow'>
 					<Col xs={12} className='text-center'>
-						<span className='text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
+						<span className='text-right text'><span className='control-icons'id='ek'>{this.props.enemiesKilled}</span> <span id='align-text'>enemies killed</span></span>
 					</Col>
 				</Row>
 				<Row id='secondRow'>
 					<Col xs={12} className='text-center'>
 						<ButtonGroup className='itemSelect'>
-							<Button onClick={this.props.useFirstAid}className='itemSelect itemBtns'><img className='control-icons'src={firstAidIcon}/><span className='text'> {this.props.firstAid}</span></Button>
-							<Button onClick={this.props.useSyringe}className='itemSelect itemBtns'><img className='control-icons'src={syringeIcon}/><span className='text'> {this.props.syringe}</span></Button>
-							<Button onClick={this.props.useKey}className='itemSelect itemBtns'><img className='control-icons'src={keyIcon}/><span className='text'> {this.props.keys}</span></Button>
-							<Button onClick={this.props.useMatch}className='itemSelect itemBtns'><img className='control-icons'src={matchesIcon}/><span className='text'> {this.props.matches}</span></Button>
-							<Button onClick={this.props.useLighter}className='itemSelect itemBtns'><img className='control-icons'src={lighterIcon}/><span className='text'> {this.props.lighters}</span></Button>
-							<Button onClick={this.props.useFlashlight}className='itemSelect itemBtns'><img className='control-icons'src={flashlightIcon}/><span className='text'> {this.props.flashlight}</span></Button>
+							<Button onClick={this.props.useFirstAid}className='itemSelect itemBtns'>
+								<Row>
+									<span className='text'>First Aid Kits</span>
+								</Row>
+								<img className='control-icons'src={firstAidIcon}/>
+									<span className='text'> {this.props.firstAid}</span>
+							</Button>
+							<Button onClick={this.props.useSyringe}className='itemSelect itemBtns'>
+								<Row>
+									<span className='text'>Syringes</span>
+								</Row>
+								<img className='control-icons'src={syringeIcon}/>
+								<span className='text'> {this.props.syringe}</span>
+							</Button>
+							<Button onClick={this.props.useKey}className='itemSelect itemBtns'>
+								<Row>
+									<span className='text'>Keys</span>
+								</Row>
+								<img className='control-icons'src={keyIcon}/>
+								<span className='text'> {this.props.keys}</span>
+							</Button>
+							<Button onClick={this.props.useMatch}className='itemSelect itemBtns'>
+								<Row>
+									<span className='text'>Matches</span>
+								</Row>
+								<img className='control-icons'src={matchesIcon}/>
+								<span className='text'> {this.props.matches}</span>
+							</Button>
+							<Button onClick={this.props.useLighter}className='itemSelect itemBtns'>
+								<Row>
+									<span className='text'>Lighters</span>
+								</Row>
+								<img className='control-icons'src={lighterIcon}/>
+								<span className='text'> {this.props.lighters}</span>
+							</Button>
+							<Button onClick={this.props.useFlashlight}className='itemSelect itemBtns'>
+								<Row>
+									<span className='text'>Flashlights</span>
+								</Row>
+								<img className='control-icons'src={flashlightIcon}/>
+								<span className='text'> {this.props.flashlight}</span>
+							</Button>
 						</ButtonGroup>
 					</Col>
 				</Row>

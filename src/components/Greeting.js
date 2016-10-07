@@ -15,14 +15,13 @@ const Greeting = React.createClass({
 
   render() {
     return (
-      <div>
-        <Modal id='greeting'show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
+      <div id='greeting'>
+        <Modal show={this.state.showModal} onHide={this.close}>
+          <Modal.Header>
             <Modal.Title>Welcome to the dungeon</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-       		<h4>Welcome to the dungeon!</h4>
-       		<h6>How to play</h6>
+       		<h4>How to play</h4>
        		<p>Use the arrow keys to navigate your way through the dungeon.</p>
        		<p>There are many dangerous enemies hiding in the dark, as well as usful items to help you defeat them.</p>
        		<p>In addition to live enemies, there is also an ongoing poison gas leak, and also items to help you deal with that.</p>

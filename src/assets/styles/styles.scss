@@ -7,12 +7,20 @@ $gasGreen: #53CC1F;
 $red: #99001A;
 
 #app {
+	font-family: "Acme", sans-serif;
 	margin: none;
 	padding: none;
 	height: 100%;
 	width: 100%;
 	margin: none;
 	#stateHolder {
+		#greeting {
+			background-color: $darkest;
+			#playBtn {
+				background-color: $gasGreen;
+				color: $lightest;
+			}
+		}
 		padding: none;
 		margin: none;
 		width: 100%;
@@ -20,6 +28,9 @@ $red: #99001A;
 		background-color: $darkest;
 		// game conrols component ---------------
 		#controls {
+			button:active, button:focus, button:hover, button:visited {
+				outline: none;
+			}
 			padding: 2%;
 			padding-bottom: 0;
 			color: $lightest;
@@ -40,6 +51,9 @@ $red: #99001A;
 				}
 				.itemSelect {
 					.itemBtns {
+						.text {
+							font-size: 100%;
+						}
 						margin: none;
 						padding: none;
 						height: inherit;
@@ -144,13 +158,6 @@ $red: #99001A;
 					height: 100%;
 					width: 100%;
 				}
-			}
-		}
-		#greeting {
-			background-color: $darkest;
-			#playBtn {
-				background-color: $gasGreen;
-				color: $lightest;
 			}
 		}
 	}

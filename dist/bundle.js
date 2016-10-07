@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f33edfbe305801ac7218"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "152e4c210e6123e28de2"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -6114,7 +6114,7 @@
 
 
 	// module
-	exports.push([module.id, "#app {\n  margin: none;\n  padding: none;\n  height: 100%;\n  width: 100%;\n  margin: none; }\n  #app #stateHolder {\n    padding: none;\n    margin: none;\n    width: 100%;\n    height: 100%;\n    background-color: #080808; }\n    #app #stateHolder #controls {\n      padding: 2%;\n      padding-bottom: 0;\n      color: #cccccc;\n      background-color: #080808;\n      border: solid #080808 1px;\n      height: 25%;\n      width: 100%;\n      position: fixed;\n      top: 0; }\n      #app #stateHolder #controls .control-row, #app #stateHolder #controls #topRow, #app #stateHolder #controls #secondRow, #app #stateHolder #controls #thirdRow, #app #stateHolder #controls #bottomRow {\n        padding: none;\n        margin: none;\n        height: inherit; }\n        #app #stateHolder #controls .control-row .roundIconBorder, #app #stateHolder #controls #topRow .roundIconBorder, #app #stateHolder #controls #secondRow .roundIconBorder, #app #stateHolder #controls #thirdRow .roundIconBorder, #app #stateHolder #controls #bottomRow .roundIconBorder {\n          border: solid #080808 1px;\n          border-radius: 100%;\n          background-color: #cccccc; }\n        #app #stateHolder #controls .control-row .itemSelect .itemBtns, #app #stateHolder #controls #topRow .itemSelect .itemBtns, #app #stateHolder #controls #secondRow .itemSelect .itemBtns, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns {\n          margin: none;\n          padding: none;\n          height: inherit;\n          width: inherit;\n          background-color: #080808; }\n          #app #stateHolder #controls .control-row .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #topRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #secondRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns .control-icons {\n            height: 50px;\n            width: 50px;\n            margin: none;\n            padding: none; }\n        #app #stateHolder #controls .control-row .control-icons, #app #stateHolder #controls #topRow .control-icons, #app #stateHolder #controls #secondRow .control-icons, #app #stateHolder #controls #thirdRow .control-icons, #app #stateHolder #controls #bottomRow .control-icons {\n          height: 50px;\n          width: 50px; }\n        #app #stateHolder #controls .control-row .text, #app #stateHolder #controls #topRow .text, #app #stateHolder #controls #secondRow .text, #app #stateHolder #controls #thirdRow .text, #app #stateHolder #controls #bottomRow .text {\n          font-size: 150%;\n          color: #cccccc;\n          font-weight: bold; }\n          #app #stateHolder #controls .control-row .text #ek, #app #stateHolder #controls #topRow .text #ek, #app #stateHolder #controls #secondRow .text #ek, #app #stateHolder #controls #thirdRow .text #ek, #app #stateHolder #controls #bottomRow .text #ek {\n            font-size: 150%;\n            color: #99001A; }\n      #app #stateHolder #controls #topRow {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #secondRow {\n        position: absolute;\n        top: 25%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #thirdRow {\n        height: 25%;\n        position: absolute;\n        top: 50%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #bottomRow {\n        position: absolute;\n        bottom: 0;\n        left: 0;\n        right: 0; }\n    #app #stateHolder #board {\n      margin: none;\n      padding: none;\n      width: 90vw;\n      height: 90vw;\n      margin-top: 14%;\n      margin-right: 5vw;\n      margin-left: 5vw;\n      box-shadow: inset 0.75px 0.75px 0.75px 0px #cccccc; }\n      #app #stateHolder #board .boardRow {\n        width: 100%;\n        height: 1%; }\n        #app #stateHolder #board .boardRow .boardBlock {\n          margin: none;\n          padding: none;\n          height: 100%;\n          width: 1%;\n          font-size: 5px;\n          float: left;\n          background-color: #999999; }\n        #app #stateHolder #board .boardRow .activeBlock {\n          background-color: #999999; }\n        #app #stateHolder #board .boardRow .gas {\n          background-color: #53CC1F; }\n        #app #stateHolder #board .boardRow .dark {\n          background-color: #080808; }\n        #app #stateHolder #board .boardRow .inDark {\n          background-color: #080808;\n          color: #1f1f1f;\n          opacity: .1; }\n        #app #stateHolder #board .boardRow .wall {\n          background-color: #080808;\n          box-shadow: inset 0.25px 0.25px 0.25px 0px #080808; }\n        #app #stateHolder #board .boardRow .icons {\n          padding: none;\n          margin: none;\n          height: 100%;\n          width: 100%; }\n    #app #stateHolder #greeting {\n      background-color: #080808; }\n      #app #stateHolder #greeting #playBtn {\n        background-color: #53CC1F;\n        color: #cccccc; }\n", ""]);
+	exports.push([module.id, "#app {\n  font-family: \"Acme\", sans-serif;\n  margin: none;\n  padding: none;\n  height: 100%;\n  width: 100%;\n  margin: none; }\n  #app #stateHolder {\n    padding: none;\n    margin: none;\n    width: 100%;\n    height: 100%;\n    background-color: #080808; }\n    #app #stateHolder #greeting {\n      background-color: #080808; }\n      #app #stateHolder #greeting #playBtn {\n        background-color: #53CC1F;\n        color: #cccccc; }\n    #app #stateHolder #controls {\n      padding: 2%;\n      padding-bottom: 0;\n      color: #cccccc;\n      background-color: #080808;\n      border: solid #080808 1px;\n      height: 25%;\n      width: 100%;\n      position: fixed;\n      top: 0; }\n      #app #stateHolder #controls button:active, #app #stateHolder #controls button:focus, #app #stateHolder #controls button:hover, #app #stateHolder #controls button:visited {\n        outline: none; }\n      #app #stateHolder #controls .control-row, #app #stateHolder #controls #topRow, #app #stateHolder #controls #secondRow, #app #stateHolder #controls #thirdRow, #app #stateHolder #controls #bottomRow {\n        padding: none;\n        margin: none;\n        height: inherit; }\n        #app #stateHolder #controls .control-row .roundIconBorder, #app #stateHolder #controls #topRow .roundIconBorder, #app #stateHolder #controls #secondRow .roundIconBorder, #app #stateHolder #controls #thirdRow .roundIconBorder, #app #stateHolder #controls #bottomRow .roundIconBorder {\n          border: solid #080808 1px;\n          border-radius: 100%;\n          background-color: #cccccc; }\n        #app #stateHolder #controls .control-row .itemSelect .itemBtns, #app #stateHolder #controls #topRow .itemSelect .itemBtns, #app #stateHolder #controls #secondRow .itemSelect .itemBtns, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns {\n          margin: none;\n          padding: none;\n          height: inherit;\n          width: inherit;\n          background-color: #080808; }\n          #app #stateHolder #controls .control-row .itemSelect .itemBtns .text, #app #stateHolder #controls #topRow .itemSelect .itemBtns .text, #app #stateHolder #controls #secondRow .itemSelect .itemBtns .text, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns .text, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns .text {\n            font-size: 100%; }\n          #app #stateHolder #controls .control-row .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #topRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #secondRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #thirdRow .itemSelect .itemBtns .control-icons, #app #stateHolder #controls #bottomRow .itemSelect .itemBtns .control-icons {\n            height: 50px;\n            width: 50px;\n            margin: none;\n            padding: none; }\n        #app #stateHolder #controls .control-row .control-icons, #app #stateHolder #controls #topRow .control-icons, #app #stateHolder #controls #secondRow .control-icons, #app #stateHolder #controls #thirdRow .control-icons, #app #stateHolder #controls #bottomRow .control-icons {\n          height: 50px;\n          width: 50px; }\n        #app #stateHolder #controls .control-row .text, #app #stateHolder #controls #topRow .text, #app #stateHolder #controls #secondRow .text, #app #stateHolder #controls #thirdRow .text, #app #stateHolder #controls #bottomRow .text {\n          font-size: 150%;\n          color: #cccccc;\n          font-weight: bold; }\n          #app #stateHolder #controls .control-row .text #ek, #app #stateHolder #controls #topRow .text #ek, #app #stateHolder #controls #secondRow .text #ek, #app #stateHolder #controls #thirdRow .text #ek, #app #stateHolder #controls #bottomRow .text #ek {\n            font-size: 150%;\n            color: #99001A; }\n      #app #stateHolder #controls #topRow {\n        position: absolute;\n        top: 0;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #secondRow {\n        position: absolute;\n        top: 25%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #thirdRow {\n        height: 25%;\n        position: absolute;\n        top: 50%;\n        left: 0;\n        right: 0; }\n      #app #stateHolder #controls #bottomRow {\n        position: absolute;\n        bottom: 0;\n        left: 0;\n        right: 0; }\n    #app #stateHolder #board {\n      margin: none;\n      padding: none;\n      width: 90vw;\n      height: 90vw;\n      margin-top: 14%;\n      margin-right: 5vw;\n      margin-left: 5vw;\n      box-shadow: inset 0.75px 0.75px 0.75px 0px #cccccc; }\n      #app #stateHolder #board .boardRow {\n        width: 100%;\n        height: 1%; }\n        #app #stateHolder #board .boardRow .boardBlock {\n          margin: none;\n          padding: none;\n          height: 100%;\n          width: 1%;\n          font-size: 5px;\n          float: left;\n          background-color: #999999; }\n        #app #stateHolder #board .boardRow .activeBlock {\n          background-color: #999999; }\n        #app #stateHolder #board .boardRow .gas {\n          background-color: #53CC1F; }\n        #app #stateHolder #board .boardRow .dark {\n          background-color: #080808; }\n        #app #stateHolder #board .boardRow .inDark {\n          background-color: #080808;\n          color: #1f1f1f;\n          opacity: .1; }\n        #app #stateHolder #board .boardRow .wall {\n          background-color: #080808;\n          box-shadow: inset 0.25px 0.25px 0.25px 0px #080808; }\n        #app #stateHolder #board .boardRow .icons {\n          padding: none;\n          margin: none;\n          height: 100%;\n          width: 100%; }\n", ""]);
 
 	// exports
 
@@ -14690,7 +14690,7 @@
 							{ xs: 12, className: 'text-center' },
 							_react2.default.createElement(
 								'span',
-								{ className: 'text' },
+								{ className: 'text-right text' },
 								_react2.default.createElement(
 									'span',
 									{ className: 'control-icons', id: 'ek' },
@@ -14717,6 +14717,15 @@
 								_react2.default.createElement(
 									_Button2.default,
 									{ onClick: this.props.useFirstAid, className: 'itemSelect itemBtns' },
+									_react2.default.createElement(
+										_Row2.default,
+										null,
+										_react2.default.createElement(
+											'span',
+											{ className: 'text' },
+											'First Aid Kits'
+										)
+									),
 									_react2.default.createElement('img', { className: 'control-icons', src: firstAidIcon }),
 									_react2.default.createElement(
 										'span',
@@ -14728,6 +14737,15 @@
 								_react2.default.createElement(
 									_Button2.default,
 									{ onClick: this.props.useSyringe, className: 'itemSelect itemBtns' },
+									_react2.default.createElement(
+										_Row2.default,
+										null,
+										_react2.default.createElement(
+											'span',
+											{ className: 'text' },
+											'Syringes'
+										)
+									),
 									_react2.default.createElement('img', { className: 'control-icons', src: syringeIcon }),
 									_react2.default.createElement(
 										'span',
@@ -14739,6 +14757,15 @@
 								_react2.default.createElement(
 									_Button2.default,
 									{ onClick: this.props.useKey, className: 'itemSelect itemBtns' },
+									_react2.default.createElement(
+										_Row2.default,
+										null,
+										_react2.default.createElement(
+											'span',
+											{ className: 'text' },
+											'Keys'
+										)
+									),
 									_react2.default.createElement('img', { className: 'control-icons', src: keyIcon }),
 									_react2.default.createElement(
 										'span',
@@ -14750,6 +14777,15 @@
 								_react2.default.createElement(
 									_Button2.default,
 									{ onClick: this.props.useMatch, className: 'itemSelect itemBtns' },
+									_react2.default.createElement(
+										_Row2.default,
+										null,
+										_react2.default.createElement(
+											'span',
+											{ className: 'text' },
+											'Matches'
+										)
+									),
 									_react2.default.createElement('img', { className: 'control-icons', src: matchesIcon }),
 									_react2.default.createElement(
 										'span',
@@ -14761,6 +14797,15 @@
 								_react2.default.createElement(
 									_Button2.default,
 									{ onClick: this.props.useLighter, className: 'itemSelect itemBtns' },
+									_react2.default.createElement(
+										_Row2.default,
+										null,
+										_react2.default.createElement(
+											'span',
+											{ className: 'text' },
+											'Lighters'
+										)
+									),
 									_react2.default.createElement('img', { className: 'control-icons', src: lighterIcon }),
 									_react2.default.createElement(
 										'span',
@@ -14772,6 +14817,15 @@
 								_react2.default.createElement(
 									_Button2.default,
 									{ onClick: this.props.useFlashlight, className: 'itemSelect itemBtns' },
+									_react2.default.createElement(
+										_Row2.default,
+										null,
+										_react2.default.createElement(
+											'span',
+											{ className: 'text' },
+											'Flashlights'
+										)
+									),
 									_react2.default.createElement('img', { className: 'control-icons', src: flashlightIcon }),
 									_react2.default.createElement(
 										'span',
@@ -15380,7 +15434,7 @@
 				this.state.playerStats.flashlight = 0;
 				this.state.playerStats.firstAid = 0;
 				this.state.playerStats.syringe = 0;
-				this.state.playerStats.keys = 2;
+				this.state.playerStats.keys = 0;
 				this.state.playerStats.bossKey = false;
 				this.state.playerStats.bodyArmor = 'unequipped';
 				this.state.playerStats.bodyArmorIcon = undefined;
@@ -15867,6 +15921,8 @@
 						level: this.state.level,
 						playerStats: this.state.playerStats
 					});
+				} else {
+					this.inventoryEmpty('matches');
 				}
 			}
 			// use a lighter ----------------------------------
@@ -15921,6 +15977,8 @@
 						});
 						alert("Sorry, your lighter ran out of fluid!");
 					}
+				} else {
+					this.inventoryEmpty('lighter');
 				}
 			}
 			// use a flashlight ---------------------------------
@@ -15974,6 +16032,8 @@
 						});
 						alert("Sorry, your batteries are dead!");
 					}
+				} else {
+					this.inventoryEmpty('flashlight');
 				}
 			}
 			// use a firstaid kit -------------------------
@@ -15991,6 +16051,8 @@
 					this.setState({
 						playerStats: this.state.playerStats
 					});
+				} else {
+					this.inventoryEmpty('firstAid kits');
 				}
 			}
 			// use a syringe -------------------------------
@@ -16009,47 +16071,51 @@
 					} else {
 						alert("This won't help, unless you're taking on gas damage!");
 					}
+				} else {
+					this.inventoryEmpty('syringe');
 				}
-				console.log('using syringe');
 			}
 			// use a key -----------------------------------
 
 		}, {
 			key: 'useKey',
 			value: function useKey(e) {
-
-				if (this.state.actionObject !== 'lockedDoor') {
-					alert('You use this key to unlock a locked door!');
-				} else {
-					if (this.state.playerStats.bossKey === true) {
-						this.state.unlockingSound.play();
-						this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
-						alert('Congratulations, you escaped the dungeon!');
+				if (this.state.playerStats.keys > 0) {
+					if (this.state.actionObject !== 'lockedDoor') {
+						alert('You use this key to unlock a locked door!');
 					} else {
-						if (this.state.playerStats.keys > 1) {
+						if (this.state.playerStats.bossKey === true) {
 							this.state.unlockingSound.play();
 							this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
-							this.setState({ level: this.state.level });
+							alert('Congratulations, you escaped the dungeon!');
 						} else {
-							var lockOrUnlock = Math.floor(Math.random() * (1 - 0 + 1) + 0);
-							if (this.state.playerStats.bossKey === true) {
+							if (this.state.playerStats.keys > 1) {
 								this.state.unlockingSound.play();
 								this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
+								this.setState({ level: this.state.level });
 							} else {
-								if (lockOrUnlock === 1) {
+								var lockOrUnlock = Math.floor(Math.random() * (1 - 0 + 1) + 0);
+								if (this.state.playerStats.bossKey === true) {
 									this.state.unlockingSound.play();
 									this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
-									this.setState({ level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content });
-									alert("Success!");
 								} else {
-									this.setState({
-										level: this.state.level
-									});
-									alert("Sorry, you didn't get the door open");
+									if (lockOrUnlock === 1) {
+										this.state.unlockingSound.play();
+										this.state.level[this.state.activeRow][this.state.activeCol].content = 'unlockedDoor';
+										this.setState({ level: this.state.level, actionObject: this.state.level[this.state.activeRow][this.state.activeCol].content });
+										alert("Success!");
+									} else {
+										this.setState({
+											level: this.state.level
+										});
+										alert("Sorry, you didn't get the door open");
+									}
 								}
 							}
 						}
 					}
+				} else {
+					this.inventoryEmpty('keys');
 				}
 			}
 
@@ -16320,6 +16386,15 @@
 				}
 			}
 		}, {
+			key: 'inventoryEmpty',
+			value: function inventoryEmpty(itemToUse) {
+				if (itemToUse[itemToUse.length - 1] !== 's') {
+					alert("Sorry, you haven't picked up any " + itemToUse + "s" + " yet!");
+				} else {
+					alert("Sorry, you haven't picked up any " + itemToUse + " yet!");
+				}
+			}
+		}, {
 			key: 'componentWillMount',
 			value: function componentWillMount(e) {
 				this.state.unlockingSound.load();
@@ -16386,8 +16461,7 @@
 						useKey: this.useKey.bind(this),
 						useMatch: this.useMatch.bind(this),
 						useLighter: this.useLighter.bind(this),
-						useFlashlight: this.useFlashlight.bind(this),
-						focusedItemEnemy: this.state.actionObject
+						useFlashlight: this.useFlashlight.bind(this)
 					})
 				);
 			}
@@ -17359,13 +17433,13 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      null,
+	      { id: 'greeting' },
 	      _react2.default.createElement(
 	        _Modal2.default,
-	        { id: 'greeting', show: this.state.showModal, onHide: this.close },
+	        { show: this.state.showModal, onHide: this.close },
 	        _react2.default.createElement(
 	          _Modal2.default.Header,
-	          { closeButton: true },
+	          null,
 	          _react2.default.createElement(
 	            _Modal2.default.Title,
 	            null,
@@ -17377,11 +17451,6 @@
 	          null,
 	          _react2.default.createElement(
 	            'h4',
-	            null,
-	            'Welcome to the dungeon!'
-	          ),
-	          _react2.default.createElement(
-	            'h6',
 	            null,
 	            'How to play'
 	          ),
