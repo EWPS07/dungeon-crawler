@@ -15,12 +15,12 @@ const Greeting = React.createClass({
 
   render() {
     return (
-      <div id='greeting'>
-        <Modal show={this.state.showModal} onHide={this.close}>
+      <div>
+        <Modal className='greeting'show={this.state.showModal} onHide={this.close}>
           <Modal.Header>
             <Modal.Title>Welcome to the dungeon</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='greeting text-center'>
        		<h4>How to play</h4>
        		<p>Use the arrow keys to navigate your way through the dungeon.</p>
        		<p>There are many dangerous enemies hiding in the dark, as well as usful items to help you defeat them.</p>

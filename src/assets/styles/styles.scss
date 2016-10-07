@@ -14,12 +14,9 @@ $red: #99001A;
 	width: 100%;
 	margin: none;
 	#stateHolder {
-		#greeting {
-			background-color: $darkest;
-			#playBtn {
-				background-color: $gasGreen;
-				color: $lightest;
-			}
+		.greeting {
+			font-size: 200%;
+			text-align: center;
 		}
 		padding: none;
 		margin: none;
